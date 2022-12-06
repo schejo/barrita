@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns:n="native" >
+
+        
+    <div class="col col-lg-12 col-md-12 col-sm-12" apply="ctrl_.ProductosNuevoCtrl" style="border: none; margin-top:70px;">
+        
+        <n:div class="form-control col-lg-12" style="border: none;  height: 100%;" >
+            <n:div class="col-lg-2" style="border: none; height: 100%; " ></n:div>
+            <n:div class="col-lg-8 col-md-9 d-flex justify-content-center" style="border: none; height: 90%; " >
+
+                <n:h1 style="color:blue;">NUEVO PRODUCTO</n:h1>
+               
+                 <n:div class="form-group col-lg-3 col-md-5 mydiv1">
+                            <label class="txtlbs" value="Ferreteria" style="color:blue; font-size: 15px;"/>
+                            <combobox id="ubiFerrete" width="100%" readonly="true" >
+                                <comboitem label = "Ferreteria BARRITA" value = "1" />
+                                <comboitem label = "Ferreteria CARRIZAL" value = "2" /> 
+                                <comboitem label = "Ferreteria LOS ANGELES" value = "3" />
+                             
+                                
+                            </combobox>
+                        </n:div> 
+                <!-- FILA #01 -->
+                
+                
+                <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="border: 3px solid;">
+                    <n:h3 style="color:blue;">Datos Generales del Producto </n:h3>
+
+                     <n:div class="form-group col-lg-5 col-md-3 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Buscar Producto" style="color:blue; font-size: 15px;"/>
+                            <combobox id="busPro" value="" cols="70" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black; text-transform:uppercase;">
+                                 <template name="model">
+                                <comboitem label="${each.nombre_pro}" value="${each.codigo_pro}"/>
+                            </template>
+                        </combobox>
+                        </n:div>                    
+                    <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="margin-top:20px;">
+                   
+                        <n:div class="form-group col-lg-5 col-md-3 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Codigo " style="color:blue; font-size: 15px;"/>
+                            <textbox id="codPro" value=""  cols="4" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:10px; color:black;"/>
+                        </n:div>
+                        
+                        <n:div class="form-group col-lg-5 col-md-3 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Descripcion" style="color:blue; font-size: 15px;"/>
+                            <textbox id="nomPro" value="" cols="40" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black; text-transform:uppercase;"/>
+                        </n:div>
+
+                    </n:div>
+                    
+                    <!--   #02 -->
+            
+                    <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="">
+                        
+                        <n:div class="form-group col-lg-5 col-md-3 mydiv1">
+                            
+                            <label class="txtlbs" value="Tipo Producto" style="color:blue; font-size: 15px;"/>
+                            <combobox id="tipPro" width="65%" >
+                                <comboitem label = "ACCESORIOS" value = "A" />
+                                <comboitem label = "HERRAMIENTAS" value = "H" /> 
+                                <comboitem label = "CONSTRUCCION" value = "C" />
+                                <comboitem label = "PVC" value = "P" />
+                                <comboitem label = "HIERRO" value = "I" />
+                                <comboitem label = "ELECTRICO" value = "E" />
+                                <comboitem label = "TORNILLOS" value = "T" />
+                                <comboitem label = "MADERA" value = "M" />
+                                <comboitem label = "CERAMICOS" value = "S" />
+                                <comboitem label = "GRIFERIA" value = "G" /> 
+                                <comboitem label = "OTROS" value = "O" /> 
+                            </combobox>
+                        </n:div>
+                        
+                        <n:div class="form-group col-lg-5 col-md-5 mydiv1">
+                            <label class="txtlbs" value="Tipo Servicio" style="color:blue; font-size: 15px;"/>
+                            <combobox id="tisPro" width="65%" >
+                                <comboitem label = "SERVICIO" value = "S" />
+                                <comboitem label = "BIEN" value = "B" /> 
+                            </combobox>
+                        </n:div>
+                                             
+                    </n:div>
+                    
+                    <!--   #03 -->
+            
+                    <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="">
+                        
+                        <n:div class="form-group col-lg-5 col-md-3 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Marca" style="color:blue; font-size: 15px;"/>
+                            <textbox id="marPro" value="" cols="30" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black; text-transform:uppercase;"/>
+                        </n:div>
+                        
+                        <n:div class="form-group col-lg-5 col-md-5 mydiv1">
+                            <label class="txtlbs" value="Presentacion" style="color:blue; font-size: 15px;"/>
+                            <combobox id="prsPro" width="65%" >
+                                <comboitem label = "UNIDAD" value = "U" />
+                                <comboitem label = "CAJA" value = "C" />
+                                <comboitem label = "SACO" value = "S"/> 
+                                <comboitem label = "LITRO" value = "LT"/>
+                                <comboitem label = "QUINTAL" value = "K"/>
+                                <comboitem label = "LIBRA" value = "LB"/>
+                                <comboitem label = "GALON" value = "G"/>
+                                <comboitem label = "METROS" value = "MT"/>
+                                <comboitem label = "MEDIO METRO" value = "MM"/>                              
+                            </combobox>
+                        </n:div>
+                              
+                    </n:div>
+                    
+                    <!--   #04 -->
+                    
+                    <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="">
+                           <n:div class="form-group col-lg-5 col-md-6 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Precio Compra" style="color:blue; font-size: 15px;" />
+                            <doublebox id="preComp"  constraint = "no negative" value="0.00" cols="25" style="font-size: 15px; margin-left:0px; heigh:20px;"/>                    
+                        </n:div> 
+                        
+                        <n:div class="form-group col-lg-5 col-md-6 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Precio Venta" style="color:blue; font-size: 15px;" />
+                            <doublebox id="prePro"  constraint = "no negative" value="0.00" cols="25" style="font-size: 15px; margin-left:0px; heigh:20px;"/>                    
+                        </n:div> 
+                        
+                      
+                      
+                                                
+                    </n:div>
+                    
+                    <!--   #05 -->
+                    <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="">
+                                   
+                        <n:div class="form-group col-lg-5 col-md-6 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Descuento" style="color:blue; font-size: 15px;"/>
+                            <doublebox id="desPro"   constraint = "no negative" value="0.00" cols="25" style="font-size: 15px; margin-left:0px; heigh:20px;"/>                    
+                        </n:div> 
+                        
+                        <n:div class="form-group col-lg-5 col-md-6 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Producto Stock" style="color:blue;font-size: 15px;"/>
+                            <doublebox id="stoPro"  constraint = "no negative" value="0.00" cols="25" style="font-size: 15px; margin-left:0px; heigh:20px;"/>
+                          <!--   <intbox id="stoPro" format="#,##0" constraint = "no negative" value="0.00" cols="25" style="font-size: 15px; margin-left:0px; heigh:20px;"/>-->
+                        </n:div> 
+                        
+                      
+                        
+                    </n:div>
+                    
+                    <!--   #06 -->
+                   <!-- <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="">
+                                 
+                        <n:div class="form-group col-lg-5 col-md-6 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Fecha Alta" style=""/>
+                            <datebox id="fecPro" cols="15"   format="dd/MM/yyyy" locale="gt" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:blue;"/>
+                        </n:div>
+                        
+                        <n:div class="form-group col-lg-5 col-md-3 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Usuario" style=""/>
+                            <textbox id="usuPro" value="" cols="30" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:blue; text-transform:uppercase;"/>
+                        </n:div>
+                        
+                    </n:div>-->
+                                           
+                    <!-- FILA #07 -->
+                 <!--   <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="">
+                        
+                        <n:div class="form-group col-lg-5 col-md-6 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Fecha Modifica" style=""/>
+                            <datebox id="modPro" cols="15"   format="dd/MM/yyyy" locale="gt" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:blue;"/>
+                        </n:div>
+                   
+                        <n:div class="form-group col-lg-6 col-md-2 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Usuario Modifica :" />
+                            <textbox id="umoPro" value="" cols="10" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:blue; text-transform:uppercase;"/>
+                        </n:div>
+                     
+                    </n:div>-->
+                          
+                    <!-- FILA #08 -->
+                    <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="">
+                          <n:div class="form-group col-lg-5 col-md-3 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Producto Conversion" style="color:blue; font-size: 15px;"/>
+                            <textbox id="covPro" value="" cols="20" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black; text-transform:uppercase;"/>
+                        </n:div>
+                 
+                        <n:div class="form-group col-lg-5 col-md-5 mydiv1">
+                            <label class="txtlbs" value="Medida Producto" style="color:blue; font-size: 15px;"/>
+                            <combobox id="medPro" width="65%" >
+                               
+                                <comboitem label = "GRANDE" value = "G" /> 
+                                <comboitem label = "MEDIANO" value = "M" />
+                                <comboitem label = "PEQUEÑO" value = "S" /> 
+                                <comboitem label = "OTRA MEDIDA" value = "O" /> 
+                            </combobox>
+                        </n:div>
+                        
+                       
+                        
+                    </n:div> 
+                    
+                    <!-- FILA #09 -->
+                    <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="">
+                        
+                         <n:div class="form-group col-lg-3 col-md-2 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Minimo" style="color:blue; font-size: 15px;"/>
+                            <textbox id="minPro" value="" cols="10" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black; text-transform:uppercase;"/>
+                        </n:div>
+                        
+                        <n:div class="form-group col-lg-3 col-md-2 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Maximo :" style="color:blue; font-size: 15px;" />
+                            <textbox id="maxPro" value="" cols="10" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black; text-transform:uppercase;"/>
+                        </n:div>
+                            
+                        <n:div class="form-group col-lg-3 col-md-5 mydiv1">
+                            <label class="txtlbs" value="Ubicacion" style="color:blue; font-size: 15px;"/>
+                            <combobox id="ubiPro" width="65%" >
+                                <comboitem label = "SALA DE VENTAS" value = "S" />
+                                <comboitem label = "PATIO" value = "P" /> 
+                                <comboitem label = "BODEGA 1 INTERIOR" value = "BI" />
+                                <comboitem label = "BODEGA 2" value = "B2" />
+                                <comboitem label = "BODEGA 3-PATIOS" value = "B3" />
+                                <comboitem label = "BODEGA 4-CARRIZAL" value = "B4" />
+                                <comboitem label = "FERRETERIA 2" value = "F2" />
+                                
+                            </combobox>
+                        </n:div> 
+                                
+                    </n:div>
+                </n:div>       
+            </n:div>
+                
+            <!-- FILA #10 -->
+            <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="">
+                
+                <div class="form-group col-lg-12 col-md-12 text-center" style="border: none; margin-top:0px; margin-bottom:10px;">
+                    <button id="btnNuevo" label="Nuevo" image="bootstrap/img/nuevo.png" orient="vertical" height="50px" width="75px"/> 
+                  <!--  <button id="btnActualiza" label="Modificar" image="bootstrap/img/modificar.png" orient="vertical" height="50px" width="75px"/>-->
+                    <button id="btnGuardar" label="Guardar" image="bootstrap/img/guardar.png" orient="vertical" height="50px" width="75px"/>
+                    <!--   <button id="btnDelete" label="Eliminar" image="bootstrap/img/borrar.png" orient="vertical" height="50px" width="75px"/>-->
+                    <button id="btnSalir" label="Salir" image="bootstrap/img/salir.png" orient="vertical" height="50px" width="75px"/>
+                </div>
+                
+            </n:div>
+            
+        </n:div>
+    </div>
+</zk>

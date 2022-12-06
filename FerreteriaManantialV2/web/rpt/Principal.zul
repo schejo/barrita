@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns:n="native">
+
+    <div class="col col-md-12 col-sm-12 text-center" style="margin-top:100px;">
+        <n:h1 >
+            <n:strong class="text-primary" >SISTEMA DE INVENTARIOS Y FACTURACION</n:strong>
+        </n:h1>
+        <image id="" src="bootstrap/img/calucos1.jpg" width="50"  height="50"/>
+        <n:h3 >
+            <n:strong class="text-primary" >Todos los Derechos Reservados</n:strong>
+        </n:h3>
+
+    </div>
+</zk>

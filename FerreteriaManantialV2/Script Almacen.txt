@@ -1,0 +1,93 @@
+Script Almacen 
+
+Create database Almacen;
+use Almacen;
+select * from Almacen.usuarios;
+select * from Almacen.productos;
+select * from Almacen.mov_productos;
+select * from Almacen.bajas;
+select * from Almacen.ventas;
+
+
+
+create table Almacen.usuarios(
+usu_codigo decimal(6,0) not null,
+usu_nombre varchar(50) not null,
+usu_telefono varchar(20),
+usu_usuario varchar(15) not null,
+usu_password varchar(20) not null,
+usu_rol char(1) not null,
+usu_fecha_crea date,
+usu_fecha_vence date,
+primary key (usu_codigo,usu_usuario)
+);
+
+
+insert into Almacen.usuarios(usu_codigo,usu_nombre,usu_telefono,usu_usuario,usu_password,
+                             usu_rol,usu_fecha_crea,usu_fecha_vence)
+			values(10,'Ramiro','45914426','ramiroher','rahc2321*','A','2021-11-04','2022-11-04');
+commit;
+*****************************************************************************************************************************************************************************************************
+create table Almacen.productos(
+prod_codigo decimal(12,0) not null,
+prod_nombre varchar(100) not null,
+prod_tipo char(1),
+prod_medida char(1),
+prod_minimo decimal(6,0),
+prod_maximo decimal(6,0),
+prod_fecha_crea date,
+prod_usuario_crea varchar(15) not null,
+prod_precio_venta decimal(12,2),
+prod_ubicacion char(2),
+prod_saldo decimal(8,0),
+prod_tipo_servicio char(1),
+primary key (prod_codigo) 
+);
+
+insert into Almacen.productos(prod_codigo,prod_nombre,prod_tipo,prod_medida,prod_minimo,
+                             prod_maximo,prod_fecha_crea,prod_usuario_crea,prod_precio_venta,
+                             prod_ubicacion,prod_saldo,prod_tipo_servicio)
+			values(1000,'PELOTA','J','G','5','10','2021-11-04','ramiroher','75.00','D','20','B');
+commit;
+******************************************************************************************************************************************************************************************************
+create table Almacen.mov_productos(
+mov_prod_codigo decimal(12,0) not null,
+mov_correlativo decimal(12,0) not null,
+mov_precio_unitario decimal(9,2),
+mov_fecha_ingreso date,
+mov_fecha_vence date,
+mov_vendedor varchar(50),
+mov_cantidad decimal(8,0),
+mov_saldo decimal(8,0),
+primary key (mov_prod_codigo,mov_correlativo),
+foreign key (mov_prod_codigo) references Almacen.productos (prod_codigo)
+);
+
+create table Almacen.ventas(
+ven_prod_codigo decimal(12,0) not null,
+ven_correlativo decimal(12,0) not null,
+ven_cantidad decimal(8,0),
+ven_precio decimal(9,0),
+ven_usuario varchar(15),
+ven_fecha date,
+ven_descuento decimal(9,2),
+ven_total decimal(9,2),
+ven_saldo decimal(8,0),
+ven_nit varchar(60),
+ven_nombre varchar(60),
+primary key (ven_prod_codigo,ven_correlativo),
+foreign key (ven_prod_codigo) references Almacen.productos (prod_codigo)
+);
+
+create table Almacen.bajas(
+baj_prod_codigo decimal(12,0) not null,
+baj_correlativo decimal(12,0) not null,
+baj_cantidad decimal(8,0),
+baj_precio decimal(9,2),
+baj_usuario varchar(15),
+baj_fecha date,
+baj_descuento decimal(9,2),
+baj_total decimal(9,2),
+primary key (baj_prod_codigo,baj_correlativo),
+foreign key (baj_prod_codigo) references Almacen.productos (prod_codigo)
+);

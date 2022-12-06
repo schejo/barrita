@@ -1,0 +1,46 @@
+
+<zk xmlns:n="native">
+    <div apply="ctrl_.ReporteFacturasCtrl" xmlns:n="native" sclass="col-md-12 col-sm-12" >
+        <groupbox
+            style="margin: 0 auto; border-radius: 5px; box-shadow: 1px 1px 1px"
+            closable="false" width="100%;" mold="3d">
+                
+            <div sclass="row" >
+                <div sclass="col-md-1">
+           
+                </div>
+                <div sclass="col-md-10">
+            
+                    <div sclass="row" >
+                        <div sclass="col-md-12 text-center">
+                            <label value="REGISTRO FACTURAS" style="font-size:20px; font-weight:bold;"   />
+                        </div>
+                    </div>
+                    <div sclass="row" >
+                        <div sclass="col-md-1"/>
+                        <div sclass="col-md-10">
+                            <grid sclass="domain"  mold="paging"  pageSize="10"  id="dataGrid" emptyMessage="No Hay Facturas FEL">
+                                <columns>
+                                    <column label="Autorizacion"  sort="auto"  width ="20%"/>
+                                    <column label="Cliente"   sort="auto" width ="30%" />
+                                    <column label="Fecha"   sort="auto"  width ="20%"/>
+                                    <column label="Total"  sort="auto"  width ="10%"/>
+                                    <column label="Estado"  sort="auto"  width ="10%"/>
+                                    <column label="Pago"  sort="auto"  width ="10%"/>
+                                    <column label="Acciones"  width ="15%"/>
+                                </columns>
+                                <rows id="rows">
+                                </rows>
+                            </grid>
+                        </div>
+                        <div sclass="col-md-1"/>
+                    </div>
+                </div>
+                <div sclass="col-md-1">
+          
+                </div>
+            </div>
+        </groupbox>    
+       
+    </div>
+</zk>

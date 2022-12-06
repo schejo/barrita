@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns:n="native" >
+    
+    <div class="col col-lg-12 col-md-12 col-sm-12" apply="ctrl_.MovimientosCtrl" style="border: none; margin-top:50px;">
+        
+        <n:div class="form-control col-lg-12" style="border: none;  height: 100%;" >
+            <n:div class="col-lg-2" style="border: none; height: 90%; " ></n:div>
+            <n:div class="col-lg-8 col-md-9 d-flex justify-content-center" style="border: none; height: 90%; " >
+             
+                <n:h1 style="color:blue;">NUEVA COMPRA </n:h1>
+                
+                <!-- FILA #01 -->
+                
+                <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="border: 3px solid;">
+                    <n:h2 style="color:blue;"> </n:h2>
+                    <n:div class="form-group col-lg-3 col-md-2 dvlb" style="border: none;">
+                        <label class="txtlbs" value="Codigo Producto" style="color:blue;"/>
+                        <textbox id="codMov" value=""  cols="5" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black; text-transform:uppercase; "/>
+                    </n:div>
+                    
+                    <n:div class="form-group col-lg-3 col-md-2 dvlb" style="border: none;">
+                        <label class="txtlbs" value="Correlativo Movimiento" style="color:blue;"/>
+                        <textbox id="corMov" value="" cols="5" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black;"/>
+                    </n:div>
+                    
+                    <n:div class="form-group col-lg-4 col-md-2 dvlb" style="border: none;">
+                        <label class="txtlbs" value="Precio Unitario" style="color:blue;"/>
+                        <doublebox id="preMov" format="#,###.00" constraint = "no negative" value="0.00" cols="10" style="font-size: 15px; margin-left:0px; heigh:20px;"/>                    
+                    </n:div> 
+                    
+                    <!--   #02 -->
+            
+                    <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="">
+                        
+                        <n:div class="form-group col-lg-4 col-md-2 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Fecha Ingreso " style="color:blue;"/>
+                            <datebox id="ingMov" cols="11"   format="dd/MM/yyyy" locale="gt" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black;"/>
+                        </n:div>
+                    
+                        <n:div class="form-group col-lg-3 col-md-2 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Usuario" style="color:blue;"/>
+                            <textbox id="usuMov" value="" cols="10" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black;"/>
+                        </n:div>
+                        
+                    </n:div>
+                
+                    <!--   #03 -->
+            
+                    <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="">
+                            
+                        <n:div class="form-group col-lg-6 col-md-4 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Nombre Proveedor" style="color:blue;"/>
+                            <textbox id="nomMov" value="" cols="35" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black;  text-transform:uppercase; "/>
+                        </n:div>
+                        
+                        <n:div class="form-group col-lg-6 col-md-4 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Cantidad" style="color:blue;"/>
+                            <textbox id="canMov" value="" cols="20" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black;"/>
+                        </n:div>
+                        
+                    </n:div>
+                                       
+                </n:div>
+                
+                <!-- FILA #04 -->
+                
+                <div class="form-group col-lg-12 col-md-12 text-center" style="border: none; margin-top:0px; margin-bottom:10px;">
+                    <button id="btnNuevo" label="Nuevo" image="bootstrap/img/nuevo.png" orient="vertical" height="50px" width="75px"/> 
+                    <!--  <button id="btnActualiza" label="Modificar" image="bootstrap/img/buscar.png" orient="vertical" height="50px" width="75px"/>-->
+                    <button id="btnGuardar" label="Guardar" image="bootstrap/img/guardar.png" orient="vertical" height="50px" width="75px"/>
+                    <!--   <button id="btnDelete" label="Eliminar" image="bootstrap/img/borrar.png" orient="vertical" height="50px" width="75px"/>-->
+                    <button id="btnSalir" label="Salir" image="bootstrap/img/salir.png" orient="vertical" height="50px" width="75px"/>
+                </div>
+            
+            </n:div>
+        </n:div>
+    </div>
+</zk>
+

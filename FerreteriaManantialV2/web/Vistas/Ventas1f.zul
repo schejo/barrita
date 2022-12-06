@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns:n="native" >
+    
+    <div class="col col-lg-12 col-md-12 col-sm-12" apply="ctrl_.VentasServicioCtrl" style="border: none; margin-top:50px;">
+        
+        <n:div class="form-control col-lg-12" style="border: none;  height: 100%;" >
+            <n:div class="col-lg-2" style="border: none; height: 90%; " ></n:div>
+            <n:div class="col-lg-8 col-md-9 d-flex justify-content-center" style="border: none; height: 90%; " >
+             
+                <n:h1 style="color:blue;">NUEVA VENTA</n:h1>
+                
+                <!-- FILA #01 -->
+                
+                <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="border: 3px solid;">
+                    
+                    <n:div class="form-group col-lg-4 col-md-4 dvlb" style="border: none;">
+                        <label class="txtlbs" value="Codigo Producto" style="color:blue; font-size: 15px;"/>
+                        <textbox id="venCod" value=""  cols="5" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:10px; color:black;"/>
+                    </n:div>
+                    
+                    <n:div class="form-group col-lg-3 col-md-2 dvlb" style="border: none;">
+                        <label class="txtlbs" value="Correlativo" style="color:blue; font-size: 15px;"/>
+                        <textbox id="venCor" value="" cols="10" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black;"/>
+                    </n:div>
+                    
+                  
+                    <n:div class="form-group col-lg-3 col-md-2 dvlb" style="border: none;">
+                        <label class="txtlbs" value="Cantidad" style="color:blue; font-size: 15px;"/>
+                        <textbox id="venCan" value="" cols="5" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black;"/>
+                    </n:div>
+                  
+                    <!--   #02 -->
+            
+                    <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="">
+                        
+                        <n:div class="form-group col-lg-4 col-md-2 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Precio Venta" style="color:blue; font-size: 15px;"/>
+                            <doublebox id="venPre" format="#,###.00" locale="gt" constraint = "no negative" value= "0" cols="5" style="font-size: 15px; margin-left:0px; heigh:20px; color:black;"/>                    
+                        </n:div>
+                       
+                        <n:div class="form-group col-lg-3 col-md-2 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Usuario" style="color:blue; font-size: 15px;"/>
+                            <textbox id="venUsu" value="" cols="20" readonly="true" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black;"/>
+                        </n:div>
+                    
+                        <n:div class="form-group col-lg-3 col-md-2 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Fecha" style="color:blue; font-size: 15px;"/>
+                            <datebox id="venFec" cols="11"   format="dd/MM/yyyy" locale="gt" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black;"/>
+                        </n:div>
+                        
+                    </n:div>
+                    
+                    <!-- FILA #03 -->
+                    
+                    <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="">
+
+                        <n:div class="form-group col-lg-4 col-md-2 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Descuento" style="color:blue; font-size: 15px;"/>
+                            <doublebox id="venDes" format="#,###.00" locale="gt" constraint = "no negative" value= "0" cols="10" style="font-size: 15px; margin-left:0px; heigh:20px; color:black;"/>                    
+                        </n:div>
+                  
+                        <n:div class="form-group col-lg-4 col-md-2 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Total Venta" style="color:blue; font-size: 15px;"/>
+                            <doublebox id="venTot" format="#,###.00" locale="gt" constraint = "no negative" value= "0" cols="10" style="font-size: 15px; margin-left:0px; heigh:20px; color:black;"/>                    
+                        </n:div>
+                         
+                        <n:div class="form-group col-lg-4 col-md-2 mydiv1">
+                            <label class="txtlbs" value="Tipo Pago" style="color:blue; font-size: 15px;"/>
+                            <combobox id="venPag" width="65%" >
+                                <comboitem label = "E" value = "E" />
+                                <comboitem label = "T" value = "T" />
+                                <comboitem label = "C" value = "C" />
+                            </combobox>
+                        </n:div>
+                    
+                    </n:div>
+                    
+                </n:div>
+               
+                <!-- FILA #04 -->
+                
+                <div class="form-group col-lg-12 col-md-12 text-center" style="border: none; margin-top:0px; margin-bottom:10px;">
+                    <button id="btnNuevo" label="Nuevo" image="bootstrap/img/registro.png" orient="vertical" height="50px" width="75px"/> 
+                    <!--  <button id="btnActualiza" label="Modificar" image="bootstrap/img/buscar.png" orient="vertical" height="50px" width="75px"/>-->
+                    <button id="btnGuardar" label="Guardar" image="bootstrap/img/salvar2.png" orient="vertical" height="50px" width="75px"/>
+                    <!--  <button id="btnDelete" label="Eliminar" image="bootstrap/img/borrar.png" orient="vertical" height="50px" width="75px"/>-->
+                    <button id="btnSalir" label="Salir" image="bootstrap/img/cerrar.png" orient="vertical" height="50px" width="75px"/>
+                </div>
+                
+            </n:div>
+        </n:div>
+    </div>
+</zk>
+
+
+

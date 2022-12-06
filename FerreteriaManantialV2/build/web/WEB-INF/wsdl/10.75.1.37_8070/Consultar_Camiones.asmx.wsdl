@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Obtener_Informacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_InformacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_InformacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Pesaje">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_PesajeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_PesajeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Obtener_InformacionSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Informacion" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_InformacionSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_InformacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_PesajeSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Pesaje" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_PesajeSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_PesajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_InformacionHttpGetIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_InformacionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_PesajeHttpGetIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_PesajeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_InformacionHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_InformacionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_PesajeHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_PesajeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="Consultar_CamionesSoap">
+    <wsdl:operation name="Obtener_Informacion">
+      <wsdl:input message="tns:Obtener_InformacionSoapIn" />
+      <wsdl:output message="tns:Obtener_InformacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Pesaje">
+      <wsdl:input message="tns:Obtener_PesajeSoapIn" />
+      <wsdl:output message="tns:Obtener_PesajeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Consultar_CamionesHttpGet">
+    <wsdl:operation name="Obtener_Informacion">
+      <wsdl:input message="tns:Obtener_InformacionHttpGetIn" />
+      <wsdl:output message="tns:Obtener_InformacionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Pesaje">
+      <wsdl:input message="tns:Obtener_PesajeHttpGetIn" />
+      <wsdl:output message="tns:Obtener_PesajeHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Consultar_CamionesHttpPost">
+    <wsdl:operation name="Obtener_Informacion">
+      <wsdl:input message="tns:Obtener_InformacionHttpPostIn" />
+      <wsdl:output message="tns:Obtener_InformacionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Pesaje">
+      <wsdl:input message="tns:Obtener_PesajeHttpPostIn" />
+      <wsdl:output message="tns:Obtener_PesajeHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Consultar_CamionesSoap" type="tns:Consultar_CamionesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Obtener_Informacion">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Informacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Pesaje">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Pesaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Consultar_CamionesSoap12" type="tns:Consultar_CamionesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Obtener_Informacion">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Informacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Pesaje">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Pesaje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Consultar_CamionesHttpGet" type="tns:Consultar_CamionesHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Obtener_Informacion">
+      <http:operation location="/Obtener_Informacion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Pesaje">
+      <http:operation location="/Obtener_Pesaje" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Consultar_CamionesHttpPost" type="tns:Consultar_CamionesHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Obtener_Informacion">
+      <http:operation location="/Obtener_Informacion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Pesaje">
+      <http:operation location="/Obtener_Pesaje" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Consultar_Camiones">
+    <wsdl:port name="Consultar_CamionesSoap" binding="tns:Consultar_CamionesSoap">
+      <soap:address location="http://10.75.1.37:8070/Consultar_Camiones.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Consultar_CamionesSoap12" binding="tns:Consultar_CamionesSoap12">
+      <soap12:address location="http://10.75.1.37:8070/Consultar_Camiones.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Consultar_CamionesHttpGet" binding="tns:Consultar_CamionesHttpGet">
+      <http:address location="http://10.75.1.37:8070/Consultar_Camiones.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Consultar_CamionesHttpPost" binding="tns:Consultar_CamionesHttpPost">
+      <http:address location="http://10.75.1.37:8070/Consultar_Camiones.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

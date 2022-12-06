@@ -1,0 +1,9 @@
+<!--<?page title="Redireccionando"?>
+<window title="BICI-REPUESTOS CALUCO..." border="none" width="200px" apply="environment.index">
+    <label value="Redireccionando..." />
+</window>-->
+
+<?page title="Redireccionando"?>
+<window title="" border="none" width="200px" apply="environment.index">
+    <label value="Redireccionando..." />
+</window>

@@ -1,0 +1,6 @@
+<window width="80%" title="Recargando" border="normal"
+	apply="environment.timeout">
+	<vbox>
+		Debido a la inactividad la sesión ha vencido, la aplicación se recargará en un momento...
+	</vbox>
+</window>

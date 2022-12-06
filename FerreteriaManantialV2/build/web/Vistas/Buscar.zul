@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns:n="native" >
+    
+    <div class="col col-lg-12 col-md-12 col-sm-12" apply="ctrl_.BuscarCtrl" style="border: none; margin-top:50px;">
+        
+        <n:div class="form-control col-lg-12" style="border: none;  height: 100%;" >
+            <n:div class="col-lg-2" style="border: none; height: 90%; " ></n:div>
+            <n:div class="col-lg-8 col-md-9 d-flex justify-content-center" style="border: none; height: 90%; " >
+             
+                <n:h1 style="color:blue;font-size: 40px;">BUSQUEDA</n:h1>
+                
+                <!-- FILA #01 -->
+                
+                <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="border: none;">
+                    
+                    <n:div class="form-group col-lg-8 col-md-8 dvlb" style="border: none;">
+                        <label class="txtlbs" value="BUSCAR.:" style="color:blue; font-size: 25px;"/>
+                        <textbox id="busca" value=""  cols="50" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:10px; color:black;  text-transform:uppercase;"/>
+                    </n:div>                                                                                                                                   
+
+                </n:div>
+                
+                
+                <!-- FILA #03 -->
+                <div class="form-group col-lg-12 col-md-12 text-left " style="">
+                
+                    <n:div class="col-lg-12 col-md-12 text-center" style="border: none; margin-top:10px; margin-bottom: 10px;">
+                        <n:div class="form-group col-lg-1 col-md-1 text-right" style="border: none; margin-top:0px; margin-bottom:10px;"></n:div>
+                        <n:div class="form-group col-lg-12 col-md-12 text-right" style="border: none; margin-top:0px; margin-bottom:10px;">
+                             
+                            <!-- <panel id="container" height="400px"  apply="">
+                            <panelchildren style="overflow: auto"> -->
+                            <listbox id="lb2" model="${allItem}" fixedLayout="true" height="250px" sizedByContent="true"  
+                                     rows="0"
+                                     onSelect="" >
+                                <auxhead >
+                                    <auxheader colspan="4" label="Listado de Productos" style="text-align: center; color:blue; font-size: 15px;" ></auxheader>
+                                </auxhead>
+                                <listhead menupopup="auto" >
+                                    <listheader label="CODIGO" width="100px;" style="color: blue;"  />
+                                    <listheader label="NOMBRE" width="350px;" style="color: blue; "/>
+                                    <listheader label="MARCA" width="150px;" style="color: blue; "/>
+                                    <listheader label="PRECIO" width="150px;" style="color: blue; "/>
+                                    <listheader label="UBICACION" width="250px;" style="color: blue;" />
+                                    <listheader label="SALDO" width="100px;" style="color: blue;" />
+                                </listhead>
+                                <template name="model">
+                                    <listitem >
+                                        <listcell label="${each.codigo}" style="text-align: left; color:black;" />
+                                        <listcell label="${each.nombre}" style="text-align: left; color:black" />
+                                        <listcell label="${each.marca}" style="text-align: left; color:black" />
+                                        <listcell label="${each.precio}" style="text-align: left; color:black" />
+                                        <listcell label="${each.ubicacion}" style="text-align: left; color:black" />
+                                        <listcell label="${each.saldo}" style="text-align: left; color:black"/>
+                                    </listitem>
+                                </template>
+                            </listbox>
+                        </n:div>
+                    </n:div>
+                </div>
+                
+                
+                
+               
+                <!-- FILA #04 -->
+                
+                <div class="form-group col-lg-12 col-md-12 text-center" style="border: none; margin-top:0px; margin-bottom:10px;">
+                    <button id="btnNuevo" label="Nuevo" image="bootstrap/img/nuevo.png" orient="vertical" height="50px" width="75px"/> 
+                    <!--  <button id="btnActualiza" label="Modificar" image="bootstrap/img/buscar.png" orient="vertical" height="50px" width="75px"/>-->
+                    <button id="btnGuardar" label="Guardar" image="bootstrap/img/guardar.png" orient="vertical" height="50px" width="75px"/>
+                    <!--   <button id="btnDelete" label="Eliminar" image="bootstrap/img/borrar.png" orient="vertical" height="50px" width="75px"/>-->
+                    <button id="btnSalir" label="Salir" image="bootstrap/img/salir.png" orient="vertical" height="50px" width="75px"/>
+                </div>
+                
+            </n:div>
+        </n:div>
+    </div>
+</zk>
+
+
+
+

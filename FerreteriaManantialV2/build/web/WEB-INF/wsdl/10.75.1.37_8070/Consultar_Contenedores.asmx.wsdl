@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Obtener_Informacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_InformacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_InformacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Retencion_Pesaje">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Retencion_PesajeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_Retencion_PesajeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Detalle_Contenedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Detalle_ContenedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_Detalle_ContenedorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Documentos_Contenedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Documentos_ContenedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_Documentos_ContenedorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Operacion_Ciclo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Operacion_CicloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_Operacion_CicloResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Cabeceras_Contenedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Cabeceras_ContenedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_Cabeceras_ContenedorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Obtener_InformacionSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Informacion" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_InformacionSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_InformacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Retencion_PesajeSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Retencion_Pesaje" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Retencion_PesajeSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_Retencion_PesajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Detalle_ContenedorSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Detalle_Contenedor" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Detalle_ContenedorSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_Detalle_ContenedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Documentos_ContenedorSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Documentos_Contenedor" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Documentos_ContenedorSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_Documentos_ContenedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Operacion_CicloSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Operacion_Ciclo" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Operacion_CicloSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_Operacion_CicloResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Cabeceras_ContenedorSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Cabeceras_Contenedor" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Cabeceras_ContenedorSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_Cabeceras_ContenedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_InformacionHttpGetIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_InformacionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Retencion_PesajeHttpGetIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Retencion_PesajeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Detalle_ContenedorHttpGetIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Detalle_ContenedorHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Documentos_ContenedorHttpGetIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Documentos_ContenedorHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Operacion_CicloHttpGetIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Operacion_CicloHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Cabeceras_ContenedorHttpGetIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Cabeceras_ContenedorHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_InformacionHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_InformacionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Retencion_PesajeHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Retencion_PesajeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Detalle_ContenedorHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Detalle_ContenedorHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Documentos_ContenedorHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Documentos_ContenedorHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Operacion_CicloHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Operacion_CicloHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Cabeceras_ContenedorHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Cabeceras_ContenedorHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="Consultar_ContenedoresSoap">
+    <wsdl:operation name="Obtener_Informacion">
+      <wsdl:input message="tns:Obtener_InformacionSoapIn" />
+      <wsdl:output message="tns:Obtener_InformacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Retencion_Pesaje">
+      <wsdl:input message="tns:Obtener_Retencion_PesajeSoapIn" />
+      <wsdl:output message="tns:Obtener_Retencion_PesajeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Detalle_Contenedor">
+      <wsdl:input message="tns:Obtener_Detalle_ContenedorSoapIn" />
+      <wsdl:output message="tns:Obtener_Detalle_ContenedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Documentos_Contenedor">
+      <wsdl:input message="tns:Obtener_Documentos_ContenedorSoapIn" />
+      <wsdl:output message="tns:Obtener_Documentos_ContenedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Operacion_Ciclo">
+      <wsdl:input message="tns:Obtener_Operacion_CicloSoapIn" />
+      <wsdl:output message="tns:Obtener_Operacion_CicloSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cabeceras_Contenedor">
+      <wsdl:input message="tns:Obtener_Cabeceras_ContenedorSoapIn" />
+      <wsdl:output message="tns:Obtener_Cabeceras_ContenedorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Consultar_ContenedoresHttpGet">
+    <wsdl:operation name="Obtener_Informacion">
+      <wsdl:input message="tns:Obtener_InformacionHttpGetIn" />
+      <wsdl:output message="tns:Obtener_InformacionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Retencion_Pesaje">
+      <wsdl:input message="tns:Obtener_Retencion_PesajeHttpGetIn" />
+      <wsdl:output message="tns:Obtener_Retencion_PesajeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Detalle_Contenedor">
+      <wsdl:input message="tns:Obtener_Detalle_ContenedorHttpGetIn" />
+      <wsdl:output message="tns:Obtener_Detalle_ContenedorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Documentos_Contenedor">
+      <wsdl:input message="tns:Obtener_Documentos_ContenedorHttpGetIn" />
+      <wsdl:output message="tns:Obtener_Documentos_ContenedorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Operacion_Ciclo">
+      <wsdl:input message="tns:Obtener_Operacion_CicloHttpGetIn" />
+      <wsdl:output message="tns:Obtener_Operacion_CicloHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cabeceras_Contenedor">
+      <wsdl:input message="tns:Obtener_Cabeceras_ContenedorHttpGetIn" />
+      <wsdl:output message="tns:Obtener_Cabeceras_ContenedorHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Consultar_ContenedoresHttpPost">
+    <wsdl:operation name="Obtener_Informacion">
+      <wsdl:input message="tns:Obtener_InformacionHttpPostIn" />
+      <wsdl:output message="tns:Obtener_InformacionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Retencion_Pesaje">
+      <wsdl:input message="tns:Obtener_Retencion_PesajeHttpPostIn" />
+      <wsdl:output message="tns:Obtener_Retencion_PesajeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Detalle_Contenedor">
+      <wsdl:input message="tns:Obtener_Detalle_ContenedorHttpPostIn" />
+      <wsdl:output message="tns:Obtener_Detalle_ContenedorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Documentos_Contenedor">
+      <wsdl:input message="tns:Obtener_Documentos_ContenedorHttpPostIn" />
+      <wsdl:output message="tns:Obtener_Documentos_ContenedorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Operacion_Ciclo">
+      <wsdl:input message="tns:Obtener_Operacion_CicloHttpPostIn" />
+      <wsdl:output message="tns:Obtener_Operacion_CicloHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cabeceras_Contenedor">
+      <wsdl:input message="tns:Obtener_Cabeceras_ContenedorHttpPostIn" />
+      <wsdl:output message="tns:Obtener_Cabeceras_ContenedorHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Consultar_ContenedoresSoap" type="tns:Consultar_ContenedoresSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Obtener_Informacion">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Informacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Retencion_Pesaje">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Retencion_Pesaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Detalle_Contenedor">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Detalle_Contenedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Documentos_Contenedor">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Documentos_Contenedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Operacion_Ciclo">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Operacion_Ciclo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cabeceras_Contenedor">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Cabeceras_Contenedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Consultar_ContenedoresSoap12" type="tns:Consultar_ContenedoresSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Obtener_Informacion">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Informacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Retencion_Pesaje">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Retencion_Pesaje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Detalle_Contenedor">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Detalle_Contenedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Documentos_Contenedor">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Documentos_Contenedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Operacion_Ciclo">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Operacion_Ciclo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cabeceras_Contenedor">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Cabeceras_Contenedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Consultar_ContenedoresHttpGet" type="tns:Consultar_ContenedoresHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Obtener_Informacion">
+      <http:operation location="/Obtener_Informacion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Retencion_Pesaje">
+      <http:operation location="/Obtener_Retencion_Pesaje" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Detalle_Contenedor">
+      <http:operation location="/Obtener_Detalle_Contenedor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Documentos_Contenedor">
+      <http:operation location="/Obtener_Documentos_Contenedor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Operacion_Ciclo">
+      <http:operation location="/Obtener_Operacion_Ciclo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cabeceras_Contenedor">
+      <http:operation location="/Obtener_Cabeceras_Contenedor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Consultar_ContenedoresHttpPost" type="tns:Consultar_ContenedoresHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Obtener_Informacion">
+      <http:operation location="/Obtener_Informacion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Retencion_Pesaje">
+      <http:operation location="/Obtener_Retencion_Pesaje" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Detalle_Contenedor">
+      <http:operation location="/Obtener_Detalle_Contenedor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Documentos_Contenedor">
+      <http:operation location="/Obtener_Documentos_Contenedor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Operacion_Ciclo">
+      <http:operation location="/Obtener_Operacion_Ciclo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cabeceras_Contenedor">
+      <http:operation location="/Obtener_Cabeceras_Contenedor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Consultar_Contenedores">
+    <wsdl:port name="Consultar_ContenedoresSoap" binding="tns:Consultar_ContenedoresSoap">
+      <soap:address location="http://10.75.1.37:8070/Consultar_Contenedores.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Consultar_ContenedoresSoap12" binding="tns:Consultar_ContenedoresSoap12">
+      <soap12:address location="http://10.75.1.37:8070/Consultar_Contenedores.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Consultar_ContenedoresHttpGet" binding="tns:Consultar_ContenedoresHttpGet">
+      <http:address location="http://10.75.1.37:8070/Consultar_Contenedores.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Consultar_ContenedoresHttpPost" binding="tns:Consultar_ContenedoresHttpPost">
+      <http:address location="http://10.75.1.37:8070/Consultar_Contenedores.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

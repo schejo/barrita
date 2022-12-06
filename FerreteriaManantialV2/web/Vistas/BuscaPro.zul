@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns:n="native">
+    
+    <window id="modalDialog"  position="center,center" closable="true"
+             apply="ctrl_.BuscaProCtrl" >
+    
+        <div class="col-lg-12 col-md-12 col-sm-12" style="" >
+            <button id="btnSalir" label="Cerrar" image="bootstrap/img/cerrar.png" orient="vertical" height="50px" width="75px" style="float: right; font-weight: bold; background: transparent; border:none; border-radius: 20px; margin-right:0px; padding-right:0px;"/>
+            <n:h1>BUSCAR PRODUCTO</n:h1>
+            <n:div class="container " >
+                <n:div id="dv1" class="">
+                    <n:div class="row">
+                        <n:div class="form-group col-lg-1 col-md-1 "></n:div>
+                        <n:div class="form-group col-lg-8 col-md-8 mydiv1">
+                            <label class="mylabel" value="Nombre Producto" style=""/>
+                            <textbox class="form-control" id="bemp1" value=""  style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black; text-transform:uppercase; "/>
+                        </n:div>
+                    
+                    </n:div>
+                    
+                    <n:div class="row">
+                
+                        <n:div class="form-group col-lg-1 col-md-1 "></n:div>
+                
+                        <n:div class="form-group col-lg-10 col-md-10 mydiv1" style="">
+                            <listbox id="lb2" model="${data}" fixedLayout="true" height="150px" sizedByContent="true" span="true"  
+                                     onSelect="cod1.value = self.selectedItem.getChildren().get(0).getLabel(); 
+                                                nom1.value = self.selectedItem.getChildren().get(1).getLabel();
+                                                " 
+                                     style="border:none; background-color: transparent;" >
+                             
+                                <listhead id="lh0" menupopup="auto" width="100%">
+                                    
+                                    <listheader label="CODIGO" width="10%" style="" />
+                                    
+                                    <listheader label="NOMBRE" width="50%"  />
+                                    
+                              
+                                </listhead>
+                                <template name="model">
+                                    <listitem class = "mycss-listcell" >
+                                        <listcell  class = "mycss-listcell" label="${each.codemp}" style="" />
+                                        <listcell  class = "mycss-listcell" label="${each.nomemp}" style="" />
+                                        
+                                        <!--
+                                        <listcell>
+                                            <button label="" type="button" iconSclass="z-icon-search" class="btn btn btn-primary btn-lg search" style="float: center; margin-top:9px;" forward="onClick=lb2.onSelectItem(${each})" />
+                                        </listcell>
+                                        -->
+                                    </listitem>
+                                </template>
+                            </listbox>
+                        </n:div>
+                    </n:div>
+                    
+                    <n:div class="row">
+                        <n:div class="form-group col-lg-1 col-md-1 "></n:div>
+                        <n:div class="form-group col-lg-8 col-md-8 mydiv1">
+                            <textbox class="form-control" id="cod1" value=""  style="display:none; "/>
+                            <textbox class="form-control" id="nom1" value=""  style="display:none; "/>
+                           
+                        </n:div>
+                    
+                    </n:div>
+                    
+                    <n:div class="row ">
+                        <n:div class="form-group col-lg-1 col-md-1 "></n:div>
+                        <n:div class="form-group col-lg-10 col-md-10 mydiv1">
+                            <button id="btnAgregar" label="" type="button" iconSclass="z-icon-plus-circle" class="btn btn btn-primary btn-lg" style="float: right; margin-top:9px;" />
+                            <!--
+                            <button id="Upload2" label="" type="button" iconSclass="z-icon-upload" class="btn btn btn-success btn-lg" style="float: center; margin-top:9px;"/>
+                            -->
+                        </n:div>
+                    </n:div>
+                    
+                </n:div>
+            </n:div>
+        
+        </div>
+    </window>
+</zk>

@@ -1,0 +1,330 @@
+
+<zk xmlns:n="native">
+    <div apply="ctrl_.VentasValesCtrl" xmlns:n="native" sclass="col-md-12 col-sm-12" >
+        <groupbox
+            style="margin: 0 auto; border-radius: 5px; box-shadow: 1px 1px 1px"
+            closable="false" width="100%;" mold="3d">
+                
+            <div sclass="row" >
+                <div sclass="col-md-1">
+           
+                </div>
+                <div sclass="col-md-10">
+                    <div sclass="row" >
+                        <div sclass="col-md-12 text-center">
+                            <label value="SALIDA DE PRODUCTOS POR VALE" style="font-size:20px; font-weight:bold;color:blue;"  />
+                        </div>                        
+                    </div>
+           
+                    <n:br/>
+                    <div sclass="row" >
+                        
+                        <div sclass="col-md-1">
+                            <label value="CODIGO " style="font-size:18px; font-weight:bold;"  />
+                            <textbox   id="txtEmpleadoId"   width="100%" value="" readonly="true"  style="font-size:16px;" maxlength="900"/>
+                     
+                        </div>
+                        <div sclass="col-md-3">
+                            <label value="VENDEDOR " style="font-size:18px; font-weight:bold;"  />
+                            <textbox   id="txtEmpleadoNombre"  width="100%" value="" readonly="true" style="font-size:16px;" maxlength="900"/>
+                     
+                        </div>
+                        <div sclass="col-md-2">
+                            <label value="USUARIO " style="font-size:18px; font-weight:bold;"  />  
+                            <textbox   id="txtEmpleadoUsuario"  width="50%" value="" readonly="true" style="font-size:16px;" maxlength="900"/>
+                                    
+                        </div>  
+                        <div sclass="col-md-2">
+                            <label value="ESTADO " style="font-size:18px; font-weight:bold;" />
+                            <textbox    id="txtFacturaEstado"   value=""   readonly="true" width="100%"  style="font-size:16px;" maxlength="900"/>
+                    
+                        </div>
+                        <div sclass="col-md-1">
+                            <label value="SERIE" style="font-size:18px; font-weight:bold;"  />
+                           
+                            <combobox id="cbxFacturaSerie" readonly="true"  width="100%" style="font-size:16px;"  value="" >
+                                <comboitem label = "A" value = "A" />
+                            </combobox>
+                        </div>
+                        <div sclass="col-md-2">
+                            <label value="TIPO PAGO " style="font-size:18px; font-weight:bold;"  />
+                           
+                            <combobox id="cbxFacturaTipoPago" readonly="true"  width="100%" style="font-size:16px;"  value="" >
+                                <comboitem label = "EFECTIVO" value = "E" />
+                                <comboitem label = "TARJETA" value = "T" />
+                                <comboitem label = "CHEQUE" value = "C" />
+                                <comboitem label = "CREDITO" value = "CR" />
+                                <comboitem label = "TRANSFERENCIA" value = "TS" />                   
+                            </combobox>
+                        </div>
+                        <div sclass="col-md-1">
+                            <label value="FECHA " style="font-size:18px; font-weight:bold;" />
+                            <textbox    id="txtFacturaFecha"   value=""   readonly="true" width="100%"  style="font-size:13px;" maxlength="900"/>
+                    
+                        </div>
+                    </div>
+                    
+                    <n:br/>
+                    <div sclass="row" >
+                        <div sclass="col-md-12 text-center">
+                            <label value="DATOS DE IDENTIFICACIÓN DEL CLIENTE " style="font-size:20px; font-weight:bold; color:blue;"  />
+                        </div>
+                    </div>
+                    
+                    <n:br/>
+                    <div sclass="row" >
+                        <div sclass="col-md-3">
+                            <label value="NIT " style="font-size:18px; font-weight:bold;"  />
+                            <textbox   id="txtClienteNit"   width="100%" value=""  style="font-size:16px;"  maxlength="900"/>
+                     
+                        </div>
+                        <div sclass="col-md-1">
+                            <n:br/>
+                            <button label=""  width="100%"  iconSclass="z-icon-save" id="btnClienteAct" sclass="btn btn-primary btn-md" />
+                        </div>
+                        <div sclass="col-md-6">
+                            <label value="NOMBRE " style="font-size:18px; font-weight:bold;"  />
+                            <textbox   id="txtClienteNombre"  width="100%" value="" readonly="true" style="font-size:16px;"   maxlength="900"/>
+                     
+                        </div>
+                        <div sclass="col-md-2">
+                            <label value="CODIGO " style="font-size:18px; font-weight:bold;"  />
+                            <textbox    id="txtClienteId"   value=""  readonly="true" width="100%" style="font-size:16px;"  maxlength="900"/>
+                    
+                        </div>
+                        
+                       
+            
+                    </div>
+          
+                    <n:br/>
+                    <div sclass="row" >
+                        <div sclass="col-md-8">
+                            <label value="DIRECCION " style="font-size:18px; font-weight:bold;"  />
+                            <textbox   id="txtClienteDireccion"   width="100%" value=""  style="font-size:16px;"  maxlength="900"/>
+                     
+                        </div>
+                        <div sclass="col-md-2">
+                            <label value="TELEFONO " style="font-size:18px; font-weight:bold;"  />
+                            <textbox   id="txtClienteTelefono" readonly="true" width="100%"  value="" style="font-size:16px;"  maxlength="900"/>
+                     
+                        </div>
+                        <div sclass="col-md-2">
+                            <label value="ALTA " style="font-size:18px; font-weight:bold;"/>
+                            <textbox    id="txtClienteAlta"   value="" readonly="true" style="font-size:16px;" width="100%"  maxlength="900"/>
+                    
+                        </div>
+                         
+                    </div>
+          
+                    <n:br/>
+                    
+                    
+                </div>
+                <div sclass="col-md-1">
+          
+                </div>
+            </div>
+        </groupbox>    
+        <groupbox
+            style="margin-top:1px; border-radius: 5px; box-shadow: 1px 1px 1px"
+            closable="false" width="100%;" mold="3d">
+                
+            <div sclass="row" >
+                <div sclass="col-md-1">
+           
+                </div>
+                <div sclass="col-md-10">
+                    <div sclass="row" >
+                        <div sclass="col-md-12 text-center">
+                            <label value="BUSQUEDA PRODUCTO" style="font-size:20px; font-weight:bold; color:blue;"  />
+                            <combobox id="cbxDetalleBusqueda" readonly = "true" width="100%" style="font-size:16px;" />
+                        </div>
+                    </div>
+                    <n:br/>
+                    <div sclass="row" >
+                        <div sclass="col-md-2">
+                            <label value="CODIGO " style="font-size:18px; font-weight:bold;"  />
+                            <textbox   id="txtProductoId"   width="100%" value="" readonly="false" style="font-size:16px;"  maxlength="900"/>
+                            <span class="input-group-btn">
+                                <button id="btnBusca1" class="btn btn-primary" type="button" iconSclass="z-icon-search" > 
+                                </button>
+                            </span>
+                        </div>
+                        <div sclass="col-md-2">
+                            <label value="TIPO " style="font-size:18px; font-weight:bold;"  />
+                            <textbox   id="txtProductoTipo"   width="100%" value="" readonly="true" style="font-size:16px;"  maxlength="900"/>
+                     
+                        </div>
+                        
+                        <div sclass="col-md-8">
+                            <label value="DESCRIPCION " style="font-size:18px; font-weight:bold;"  />
+                            <textbox   id="txtProductoDescripcion"  width="100%" readonly="true" value="" style="font-size:16px;"  maxlength="900"/>
+                     
+                        </div>
+                 
+                    
+                    </div>
+                    <n:br/>
+                    <div sclass="row" >
+                       
+                        <div sclass="col-md-3">
+                            <label value="PRECIO UNIDAD " style="font-size:18px; font-weight:bold;"/>
+                            <textbox    id="txtProductoPrecio"   value="" readonly="true" style="font-size:16px;" width="100%"  maxlength="900"/>
+                            
+                        </div>
+                        <div sclass="col-md-3">
+                            <label value="DESCUENTO " style="font-size:18px; font-weight:bold;"/>
+                            <textbox    id="txtProductoDescuento"   value="" readonly="true" style="font-size:16px;" width="100%"  maxlength="900"/>
+                            
+                        </div>
+                        
+                        
+                        <div sclass="col-md-2">
+                            <label value="STOCK" style="font-size:18px; font-weight:bold;"/>
+                            <textbox    id="txtProductoStock"   value="" readonly="true" style="font-size:16px;" width="100%"  maxlength="900"/>
+                            
+                        </div>
+                        
+                        <div sclass="col-md-2">
+                            <label value="CANTIDAD" style="font-size:18px; font-weight:bold;"/>
+                            <intbox    id="txtProductoCantidad"   style="font-size:16px;" width="100%"  maxlength="900"/>
+                            
+                        </div>
+                    
+                        <div sclass="col-md-2">
+                            <n:br/>
+                            <button label="Agregar"  width="100%"  iconSclass="z-icon-save" id="btnDetalleAgregar" sclass="btn btn-primary btn-md" />
+                        </div>
+                    </div>
+                    <n:br/>
+                         
+                    <div sclass="row" >
+                        <div sclass="col-md-12 text-center">
+                            <label value="DETALLE DE PRODUCTOS AGREGADOS " style="font-size:24px; font-weight:bold; color:blue;"  />
+                        </div>
+                    </div>
+                    <n:br/>
+                    <grid sclass="domain"  mold="paging"  pageSize="100"  id="dataGrid" emptyMessage="No Hay Productos Agregados">
+                        <columns>
+                            <column label="NO."  sort="auto"  width ="5%"/>
+                            <column label="CODIGO"  sort="auto"  width ="7%"/>
+                            <column label="PRODUCTO"  sort="auto"  width ="40%"/>
+                            <column label="STOCK"  sort="auto"  width ="6%"/>
+                            <column label="CANTIDAD"  sort="auto"  width ="10%"/>
+                            <column label="PRECIO UNIDAD"   sort="auto" width ="10%" />
+                            <column label="DESCUENTO"   sort="auto"  width ="10%"/>
+                            <column label="IMPORTE"  sort="auto"  width ="10%"/>
+                            <column label="ELIMINAR"  sort="auto"  width ="7%"/>
+                        </columns>
+                        <rows id="rows">
+                        </rows>
+                    </grid>
+                    <n:br/>
+                    <n:br/>
+                    
+                    <div sclass="row" >
+                       
+                        <div sclass="col-md-2">
+                            <label value="SUBTOTAL " style="font-size:18px; font-weight:bold;"/>
+                             
+                        </div>
+                        <div sclass="col-md-2">
+                            <textbox    id="txtSubtotal"   value="" readonly="true" style="font-size:16px;" width="100%"  maxlength="900"/>
+                            
+                        </div>
+                        <div sclass="col-md-2">
+                            <label value="DESCUENTO " style="font-size:18px; font-weight:bold;"/>
+                             
+                        </div>
+                        
+                        <div sclass="col-md-2">
+                            <textbox    id="txtDescuentos"   value="" readonly="true" style="font-size:16px;" width="100%"  maxlength="900"/>
+                            
+                        </div>
+                        
+                        
+                        <div sclass="col-md-2">
+                            <label value="TOTAL" style="font-size:18px; font-weight:bold;"/>
+                             
+                        </div>
+                        <div sclass="col-md-2">
+                            <textbox    id="txtTotal"   value="" readonly="true" style="font-size:16px;" width="100%"  maxlength="900"/>
+                            
+                        </div>
+                        
+                         
+                    </div>
+            
+                    <n:br/>
+                    <n:br/>
+                    
+                    <div sclass="row" >
+                       
+                        <div sclass="col-md-3">
+                            <label value="EFECTIVO " style="font-size:18px; font-weight:bold;"/>
+                            <doublebox    id="txtEfectivo"    readonly="true" style="font-size:16px;" width="100%"  maxlength="900"/>
+                            
+                        </div>
+                         
+                        <div sclass="col-md-3">
+                            <label value="TARJETA DEB/CRE " style="font-size:18px; font-weight:bold;"/>
+                            <doublebox    id="txtTarjeta"   readonly="true" style="font-size:16px;" width="100%"  maxlength="900"/>
+                            
+                        </div>
+                        <div sclass="col-md-3">
+                            <label value="REFERENCIA" style="font-size:18px; font-weight:bold;"/>
+                            <textbox    id="txtReferencia"   value="" readonly="true" style="font-size:16px;" width="100%"  maxlength="900"/>
+                            
+                        </div>
+                        
+                        <div sclass="col-md-3">
+                            <label value="CREDITO" style="font-size:18px; font-weight:bold;"/>
+                            <doublebox    id="txtCredito"    readonly="true" style="font-size:16px;" width="100%"  maxlength="900"/>
+                        </div>
+                    </div>
+                    <n:br/>
+                    <n:br/>
+                    <div sclass="row" >
+                        <div sclass="col-md-3">
+                            <label value="EFECTIVO RECIBIDO" style="font-size:18px; font-weight:bold;"/>
+                        </div>
+                        <div sclass="col-md-3">
+                            <doublebox    id="txtRecibido"    readonly="true" style="font-size:16px;" width="100%"  maxlength="900"/>
+                        </div>
+                        <div sclass="col-md-3">
+                            <label value="TOTAL CAMBIO" style="font-size:18px; font-weight:bold; color:red;"/>
+                        </div>
+                        <div sclass="col-md-3">
+                            <doublebox    id="txtCambio"   readonly="true" style="font-size:16px;" width="100%"  maxlength="900"/>
+                        </div>
+                    </div>
+            
+                    <separator/>
+                    <n:br/>
+                    <div sclass="row" >
+                        <div sclass="col-md-3"/>
+                        <div sclass="col-md-3">
+                            <button label="Vale Horizontal"  width="100%"  iconSclass="z-icon-save" id="btnGuardar" sclass="btn btn-primary btn-md" />
+                            <button label="Vale Vertical"  width="100%"  iconSclass="z-icon-save" id="btnGuardarVerti" sclass="btn btn-primary btn-md" />
+
+                        </div>
+                        <!--<div sclass="col-md-2">
+                            <button label="Imprimir" width="100%"  disabled = "true" iconSclass="z-icon-print" id="btnImprimir" sclass="btn btn-primary btn-md" />
+                        </div>-->
+                        <div sclass="col-md-3">
+                            <button label="Limpiar" width="100%"   iconSclass="z-icon-eraser" id="btnLimpiar" sclass="btn btn-primary btn-md" />
+                        </div>
+                        
+                        <div sclass="col-md-3"/>
+                    </div>
+                    
+                </div>
+                <div sclass="col-md-1">
+          
+                </div>
+            </div>
+        </groupbox>    
+
+    </div>
+</zk>
