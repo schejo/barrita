@@ -43,7 +43,7 @@ public class VentaPagoDal {
                 + "              WHEN '2' THEN 'CARRIZAL'\n"
                 + "              WHEN '3' THEN 'LOS ANGELES'\n"
                 + "              END   AS SUCURSAL \n"
-                + "	from almacen.factura a, almacen.prefactura p, almacen.cliente c\n"
+                + "	from factura a, prefactura p, cliente c\n"
                 + "	where a.fac_pre_numero = p.prefac_id and p.prefac_cl_id = c.CL_ID \n"
                 + "    and a.fac_tipo_pago='" + pago + "' and date_format(a.fac_fecha_alta, '%d/%m/%Y')>='" + inicio + "' \n"
                 + "    and date_format(a.fac_fecha_alta, '%d/%m/%Y')<='" + fin + "' and a.fac_sucursal='" + sucursal + "';";

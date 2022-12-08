@@ -166,7 +166,7 @@ public class ProveedoresDal {
      public List<ProveedoresMd> REGselect() throws SQLException, ClassNotFoundException {
         List<ProveedoresMd> allReporteCli = new ArrayList<ProveedoresMd>();
 
-        String query = "SELECT * FROM almacen.proveedores;";
+        String query = "SELECT * FROM proveedores;";
 
         try {
             conexion = cnn.Conexion();
@@ -258,7 +258,7 @@ public class ProveedoresDal {
         int resp = 0;
         cl = new ProveedoresMd();
         String query1 = " SELECT max(pr_ID)+1 as id FROM proveedores; ";
-        String sql = " INSERT INTO almacen.proveedores (pr_ID, pr_NOMBRE, pr_NIT, pr_DIRECCION, pr_TELEFONO, pr_FECHA_ALTA, pr_USUARIO_ALTA, pr_CORREO)\n"
+        String sql = " INSERT INTO proveedores (pr_ID, pr_NOMBRE, pr_NIT, pr_DIRECCION, pr_TELEFONO, pr_FECHA_ALTA, pr_USUARIO_ALTA, pr_CORREO)\n"
                 + "VALUES (?,?,?,?,?,NOW(),?,?);";
 
         try {

@@ -39,7 +39,7 @@ public class BuscarDal {
                 + "                when 'BI' then 'BODEGA 1 INTERIOR' \n"
                 + "                END AS UBICACION,\n"
                 + "                pro_stock_barrita\n"
-                + "		 from almacen.productos";
+                + "		 from productos";
       
                                 
                                 

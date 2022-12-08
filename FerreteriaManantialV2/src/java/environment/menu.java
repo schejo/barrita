@@ -20,7 +20,20 @@ public class menu extends GenericForwardComposer {
         super.doAfterCompose(comp);
         String User = getUsuario();
         System.out.println("Session.: " + User);
-        lblUser.setValue(User);
+        String sucursal="";
+         switch (session.getAttribute("SUCURSAL").toString()) {
+            case "1":
+                sucursal = "Barrita";
+                break;
+            case "2":
+                sucursal = "Carrizal";
+                break;
+            case "3":
+                sucursal = "Los Angeles";
+                break;
+
+        }
+        lblUser.setValue(User+" sucursal "+sucursal);
         rootPagina.setSrc("/Vistas/Principal.zul");
     }
 

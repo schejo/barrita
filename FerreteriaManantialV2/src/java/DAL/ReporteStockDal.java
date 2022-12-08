@@ -59,7 +59,7 @@ public class ReporteStockDal {
              //   + "                    when 'P' then 'Pasillo Izquierdo'\n"
                 + "                 END AS UBICACION,\n"
                 + "       pro_stock_barrita\n"
-                + "from  almacen.productos\n"
+                + "from  productos\n"
                 + "where pro_stock_barrita < 6\n"
                 + "and    pro_fecha_alta >=  '" + dateInString + "'\n "
                 + "and    pro_fecha_alta <=  '" + dateInString2 + "'";

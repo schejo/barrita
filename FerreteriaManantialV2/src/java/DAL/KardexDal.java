@@ -51,12 +51,12 @@ public class KardexDal {
                 +" when 'B4' then 'BODEGA 4-CARRIZAL' \n"
                 +" END AS UBICACION, \n"
                 + "a.pro_stock_angeles\n"
-                + "from almacen.productos a where pro_angeles=1";
+                + "from productos a where pro_angeles=1";
 
         String query2 = "select a.pro_id,a.pro_descripcion,\n"
                 + "                a.pro_minimo, SUM( a.pro_precio_venta) as TOTAL1, a.pro_maximo,\n"
                 + "                a.pro_ubicacion, SUM(a.pro_stock) as TOTAL2\n"
-                + "                from almacen.productos a ";
+                + "                from productos a ";
 
         try {
             conexion = cnn.Conexion();
@@ -129,12 +129,12 @@ public class KardexDal {
                 +" when 'B4' then 'BODEGA 4-CARRIZAL' \n"
                 +" END AS UBICACION, \n"
                 + "a.pro_stock_carrizal\n"
-                + "from almacen.productos a where pro_carrizal=1";
+                + "from productos a where pro_carrizal=1";
 
         String query2 = "select a.pro_id,a.pro_descripcion,\n"
                 + "                a.pro_minimo, SUM( a.pro_precio_venta) as TOTAL1, a.pro_maximo,\n"
                 + "                a.pro_ubicacion, SUM(a.pro_stock) as TOTAL2\n"
-                + "                from almacen.productos a ";
+                + "                from productos a ";
 
         try {
             conexion = cnn.Conexion();
@@ -207,12 +207,12 @@ public class KardexDal {
                 +" when 'B4' then 'BODEGA 4-CARRIZAL' \n"
                 +" END AS UBICACION, \n"
                 + "a.pro_stock_barrita\n"
-                + "from almacen.productos a where pro_ferreteria=1";
+                + "from productos a where pro_ferreteria=1";
 
         String query2 = "select a.pro_id,a.pro_descripcion,\n"
                 + "                a.pro_minimo, SUM( a.pro_precio_venta) as TOTAL1, a.pro_maximo,\n"
                 + "                a.pro_ubicacion, SUM(a.pro_stock) as TOTAL2\n"
-                + "                from almacen.productos a ";
+                + "                from productos a ";
 
         try {
             conexion = cnn.Conexion();
@@ -285,7 +285,7 @@ public class KardexDal {
 "                  when 'B4' then 'BODEGA 4-CARRIZAL '    \n" +
 "                  END as ubicacion, \n" +
 "                  a.pro_stock_barrita,a.pro_stock_carrizal,a.pro_stock_angeles   \n" +
-"                  from almacen.productos a;";
+"                  from productos a;";
 //                + "select a.pro_id,a.pro_descripcion,pro_marca,  \n" +
 //"                 a.pro_minimo, a.pro_precio_compra,a.pro_precio_venta, a.pro_maximo,   \n" +
 //"                 concat(CASE a.pro_ubicacion   \n" +
@@ -308,7 +308,7 @@ public class KardexDal {
         String query2 = "select a.pro_id,a.pro_descripcion,\n"
                 + "                a.pro_minimo, SUM( a.pro_precio_venta) as TOTAL1, a.pro_maximo,\n"
                 + "                a.pro_ubicacion, SUM(a.pro_stock_barrita) as TOTAL2\n"
-                + "                from almacen.productos a ";
+                + "                from productos a ";
 
         try {
             conexion = cnn.Conexion();

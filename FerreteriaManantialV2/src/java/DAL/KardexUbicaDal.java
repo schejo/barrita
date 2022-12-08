@@ -37,7 +37,7 @@ public class KardexUbicaDal {
      //           + "                    when 'P' then 'Pasillo Izquierdo'\n"
                 + "                 END AS UBICACION,\n"
                 + "                 a.pro_stock_barrita\n"
-                + "                 from almacen.productos a\n"
+                + "                 from productos a\n"
                 + "                 where a.pro_ubicacion = '" + ubica +"' ";
                
         System.out.println("que lleva tipo en DAL 2.: " + query);

@@ -16,7 +16,7 @@ public class Conexion {
 
             //cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/almacen?user=SERGIO&password=sergio&allowPublicKeyRetrieval=true&useSSL=false");
 //          cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/almacen?user=root&password=root&allowPublicKeyRetrieval=true&useSSL=false");
-          cnx = DriverManager.getConnection("jdbc:mysql://db-mysql-nyc1-13705-do-user-12423640-0.b.db.ondigitalocean.com:25060/almacen?user=doadmin&password=AVNS_-KuWb0TJK9yrp22W4_n&allowPublicKeyRetrieval=true&useSSL=false");
+          cnx = DriverManager.getConnection("jdbc:mysql://base-administrada-do-user-12296041-0.b.db.ondigitalocean.com:25060/barrita?user=barrita&password=AVNS_C5BNgbNDRh7--SWethj&allowPublicKeyRetrieval=true&useSSL=false");
 
             System.out.println("Conexion Exitosa a Base de Datos...!");
         } catch (Exception ex) {

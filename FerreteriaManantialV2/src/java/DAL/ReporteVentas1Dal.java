@@ -43,9 +43,9 @@ public class ReporteVentas1Dal {
 "                             c.pro_descripcion AS DESCRIPCION,\n" +
 "                                 b.det_cantidad as CANTIDAD, b.det_precio_venta as PRECIO, \n" +
 "                                 (b.det_precio_venta * b.det_cantidad) as TOTAL,d.fac_fecha_alta\n" +
-"                                  from almacen.prefactura a,\n" +
-"                                    almacen.detalle_prefactura b, \n" +
-"                                    almacen.productos c,\n" +
+"                                  from prefactura a,\n" +
+"                                    detalle_prefactura b, \n" +
+"                                    productos c,\n" +
 "                                    factura d\n" +
 "                               where a.prefac_id = b.det_prefac_id \n" +
 "                               and b.det_pro_id = c.pro_id\n" +

@@ -29,8 +29,8 @@ public class ClientesDal {
         List<ClientesMd> allReporteCur = new ArrayList<ClientesMd>();
 
         String query = "select a.id,b.cl_nombre,a.cre_capital,a.cre_otorgado,a.cre_pagado,a.cre_saldo,a.cre_fecha_otorga,a.cre_fecha_paga,a.cre_factura,a.cre_obser,a.cre_usu_alta\n"
-                + "from almacen.cliente b,\n"
-                + "     almacen.creditos a\n"
+                + "from cliente b,\n"
+                + "     creditos a\n"
                 + "     where a.cl_id=b.cl_id;";
 //                + "SELECT * FROM almacen.creditos;"
 //                + "select a.cur_id,a.cur_nombre,\n"
@@ -133,7 +133,7 @@ public class ClientesDal {
             conexion.setAutoCommit(false);
             int vl = 0;
             st = conexion.createStatement();
-            vl = st.executeUpdate("UPDATE almacen.cliente SET CL_DISPONIBLE = " + data.getDisponible() + " WHERE CL_ID =" + data.getCodigoClienteMos() + "");
+            vl = st.executeUpdate("UPDATE cliente SET CL_DISPONIBLE = " + data.getDisponible() + " WHERE CL_ID =" + data.getCodigoClienteMos() + "");
 //                    + "UPDATE almacen.cliente SET CL_DISPONIBLE = " + data.getDisponible()+ " WHERE CL_ID = " + data.getCodigoClienteMos()+ ";");
 //                    + "UPDATE cliente SET CL_NOMBRE='" + data.getDisponible()+ "',CL_NIT='"
 //                    + data.getNit() + "',"
@@ -454,7 +454,7 @@ public class ClientesDal {
         int resp = 0;
         cl = new ClientesMd();
         //  String query1 = "";
-        String sql = "INSERT INTO `almacen`.`creditos` (`cl_id`, `cre_capital`, `cre_pagado`, `cre_saldo`, `cre_fecha_paga`, `cre_factura`, `cre_obser`, `cre_usu_alta`) "
+        String sql = "INSERT INTO creditos (`cl_id`, `cre_capital`, `cre_pagado`, `cre_saldo`, `cre_fecha_paga`, `cre_factura`, `cre_obser`, `cre_usu_alta`) "
                 + "VALUES (?, ?, ?, ?,NOW(), ?, ?, ?)";
 //                + " INSERT INTO almacen.cliente (CL_ID, CL_NOMBRE, CL_NIT, CL_DIRECCION, CL_TELEFONO, CL_FECHA_ALTA, CL_USUARIO_ALTA, CL_CORREO,CL_CREDITO,CL_DISPONIBLE)\n"
 //                + "VALUES (?,?,?,?,?,NOW(),?,?,?,?);";
@@ -507,7 +507,7 @@ public class ClientesDal {
         int resp = 0;
         cl = new ClientesMd();
         //  String query1 = "";
-        String sql = "INSERT INTO `almacen`.`creditos` (`cl_id`, `cre_capital`, `cre_otorgado`, `cre_saldo`, `cre_fecha_otorga`, `cre_factura`, `cre_obser`, `cre_usu_alta`) "
+        String sql = "INSERT INTO `creditos` (`cl_id`, `cre_capital`, `cre_otorgado`, `cre_saldo`, `cre_fecha_otorga`, `cre_factura`, `cre_obser`, `cre_usu_alta`) "
                 + "VALUES (?, ?, ?, ?,NOW(), ?, ?, ?)";
 //                + " INSERT INTO almacen.cliente (CL_ID, CL_NOMBRE, CL_NIT, CL_DIRECCION, CL_TELEFONO, CL_FECHA_ALTA, CL_USUARIO_ALTA, CL_CORREO,CL_CREDITO,CL_DISPONIBLE)\n"
 //                + "VALUES (?,?,?,?,?,NOW(),?,?,?,?);";
@@ -560,7 +560,7 @@ public class ClientesDal {
         int resp = 0;
         cl = new ClientesMd();
         String query1 = " SELECT max(CL_ID)+1 as id FROM cliente; ";
-        String sql = " INSERT INTO almacen.cliente (CL_ID, CL_NOMBRE, CL_NIT, CL_DIRECCION, CL_TELEFONO, CL_FECHA_ALTA, CL_USUARIO_ALTA, CL_CORREO)\n"
+        String sql = " INSERT INTO cliente (CL_ID, CL_NOMBRE, CL_NIT, CL_DIRECCION, CL_TELEFONO, CL_FECHA_ALTA, CL_USUARIO_ALTA, CL_CORREO)\n"
                 + "VALUES (?,?,?,?,?,NOW(),?,?);";
 
         try {
@@ -612,7 +612,7 @@ public class ClientesDal {
         int resp = 0;
         cl = new ClientesMd();
         String query1 = " SELECT max(CL_ID)+1 as id FROM cliente; ";
-        String sql = " INSERT INTO almacen.cliente (CL_ID, CL_NOMBRE, CL_NIT, CL_DIRECCION, CL_TELEFONO, CL_FECHA_ALTA, CL_USUARIO_ALTA, CL_CORREO,CL_CREDITO,CL_DISPONIBLE)\n"
+        String sql = " INSERT INTO cliente (CL_ID, CL_NOMBRE, CL_NIT, CL_DIRECCION, CL_TELEFONO, CL_FECHA_ALTA, CL_USUARIO_ALTA, CL_CORREO,CL_CREDITO,CL_DISPONIBLE)\n"
                 + "VALUES (?,?,?,?,?,NOW(),?,?,?,?);";
 
         try {

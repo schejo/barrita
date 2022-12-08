@@ -882,7 +882,7 @@ public class CotizacionCtrl extends Commons {
                 + "       IFNULL(FORMAT(P.PRO_PRECIO_VENTA,2),'-'),\n"
                 + "       IFNULL(FORMAT(IFNULL(P.PRO_DESCUENTO,0),2),'-'),\n"
                 + "       IFNULL(P.pro_stock_barrita,0)\n"
-                + "FROM almacen.productos P  ORDER BY P.PRO_DESCRIPCION ASC", cbxDetalleBusqueda);
+                + "FROM productos P  ORDER BY P.PRO_DESCRIPCION ASC", cbxDetalleBusqueda);
         
         //para obtener la lista
          lista = ctd.consulta();

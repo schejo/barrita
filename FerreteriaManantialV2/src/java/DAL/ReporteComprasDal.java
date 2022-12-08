@@ -50,8 +50,8 @@ public class ReporteComprasDal {
         String query = "select a.pro_descripcion,b.mov_precio_unitario, \n" +
 "                          b.mov_cantidad,\n" +
 "                         (b.mov_precio_unitario * b.mov_cantidad)as TOTAL\n" +
-"                  from   almacen.productos a,\n" +
-"                         almacen.mov_productos b\n" +
+"                  from   productos a,\n" +
+"                         mov_productos b\n" +
 "                  where  a.pro_id = b. mov_pro_codigo\n" +
 "                  and a.pro_ferreteria=1\n" +
 "                   and   date_format(b.mov_fecha_ingreso, '%d/%m/%Y') >= '" + anio + "' \n" +
@@ -69,8 +69,8 @@ public class ReporteComprasDal {
                 + "         SUM( b.mov_precio_unitario) as PRECIO,\n"
                 + "	     SUM(a.pro_stock_barrita) as CANTIDAD,\n"
                 + "          SUM(b.mov_cantidad) as TOTAL\n"//b.mov_saldo
-                + "     from almacen.productos a,\n"
-                + "          almacen.mov_productos b ";
+                + "     from productos a,\n"
+                + "          mov_productos b ";
 
         try {
             conexion = cnn.Conexion();
@@ -122,8 +122,8 @@ public class ReporteComprasDal {
         String query = "select a.pro_descripcion,b.mov_precio_unitario, \n" +
 "                          b.mov_cantidad,\n" +
 "                         (b.mov_precio_unitario * b.mov_cantidad)as TOTAL\n" +
-"                  from   almacen.productos a,\n" +
-"                         almacen.mov_productos b\n" +
+"                  from   productos a,\n" +
+"                         mov_productos b\n" +
 "                  where  a.pro_id = b. mov_pro_codigo\n" +
 "                  and a.pro_carrizal=1\n" +
 "                   and   date_format(b.mov_fecha_ingreso, '%d/%m/%Y') >= '" + anio + "' \n" +
@@ -180,8 +180,8 @@ public class ReporteComprasDal {
         String query = "select a.pro_descripcion,b.mov_precio_unitario, \n" +
 "                          b.mov_cantidad,\n" +
 "                         (b.mov_precio_unitario * b.mov_cantidad)as TOTAL\n" +
-"                  from   almacen.productos a,\n" +
-"                         almacen.mov_productos b\n" +
+"                  from   productos a,\n" +
+"                         mov_productos b\n" +
 "                  where  a.pro_id = b. mov_pro_codigo\n" +
 "                  and a.pro_angeles=1\n" +
 "                   and   date_format(b.mov_fecha_ingreso, '%d/%m/%Y') >= '" + anio + "' \n" +

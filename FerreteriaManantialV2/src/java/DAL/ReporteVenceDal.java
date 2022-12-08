@@ -40,8 +40,8 @@ public class ReporteVenceDal {
         String query = "  select a.prod_nombre,b.mov_precio_unitario, \n"
                 + "              b.mov_cantidad,\n"
                 + "              b.mov_fecha_vence\n"
-                + "       from   almacen.productos a,              \n"
-                + "              almacen.mov_productos b              \n"
+                + "       from   productos a,              \n"
+                + "              mov_productos b              \n"
                 + "       where  a.prod_codigo = b. mov_prod_codigo\n" 
                 +"        and    b.mov_fecha_vence < '"+dateInString+"' " ;    
                   

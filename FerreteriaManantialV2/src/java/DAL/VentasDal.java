@@ -62,7 +62,7 @@ public class VentasDal {
 
             int total = detalles.size() + 2;
             
-            String sql = "update almacen.factura set fac_estado='A', fac_fecha_modifica = now() where  fac_autorizacion = ?";
+            String sql = "update factura set fac_estado='A', fac_fecha_modifica = now() where  fac_autorizacion = ?";
             conn.setAutoCommit(false);
             smt = conn.prepareStatement(sql);
 
@@ -88,7 +88,7 @@ public class VentasDal {
 
             for (int i = 0; i < detalles.size(); i++) {
 
-                sql = "update almacen.productos set " + stock + " = " + stock + "+" + detalles.get(i).getProductoCantidad() + " "
+                sql = "update productos set " + stock + " = " + stock + "+" + detalles.get(i).getProductoCantidad() + " "
                         + "where pro_id = '" + detalles.get(i).getDetProductoId() + "'";
                 smt = conn.prepareStatement(sql);
                 result += smt.executeUpdate();
@@ -164,7 +164,7 @@ public class VentasDal {
 
                 int total = detalles.size() + 2;
 
-                String sql = "insert into almacen.prefactura values ((SELECT IFNULL(MAX(prefac_id), 0)+1 FROM almacen.prefactura u),"
+                String sql = "insert into prefactura values ((SELECT IFNULL(MAX(prefac_id), 0)+1 FROM prefactura u),"
                         + "?,?,?,?,?,?,now(),?,null,null,?)";
                 conn.setAutoCommit(false);
                 smt = conn.prepareStatement(sql);
@@ -184,7 +184,7 @@ public class VentasDal {
                         + " 'Detalle': [\n";
 
                 for (int i = 0; i < detalles.size(); i++) {
-                    sql = "insert into almacen.detalle_prefactura values ((SELECT MAX(prefac_id) FROM almacen.prefactura u),"
+                    sql = "insert into detalle_prefactura values ((SELECT MAX(prefac_id) FROM prefactura u),"
                             + "?,'" + detalles.get(i).getDetProductoPrecioVenta() + "','" + detalles.get(i).getProductoDescuento() + "',?)";
                     conn.setAutoCommit(false);
                     smt = conn.prepareStatement(sql);
@@ -194,22 +194,25 @@ public class VentasDal {
                     result += smt.executeUpdate();
                     smt.close();
 
-                    String stock = "";
+                    String stock = "",productos="";
 
                     switch (session.getAttribute("SUCURSAL").toString()) {
                         case "1":
                             stock = "pro_stock_barrita";
+                            productos ="productos";
                             break;
                         case "2":
                             stock = "pro_stock_carrizal";
+                            productos ="productos2";
                             break;
                         case "3":
                             stock = "pro_stock_angeles";
+                            productos ="productos";
                             break;
 
                     }
 
-                    sql = "update almacen.productos set " + stock + " = " + stock + "-" + detalles.get(i).getProductoCantidad() + " "
+                    sql = "update "+productos+" set " + stock + " = " + stock + "-" + detalles.get(i).getProductoCantidad() + " "
                             + "where pro_id = '" + detalles.get(i).getDetProductoId() + "'";
                     smt = conn.prepareStatement(sql);
                     smt.executeUpdate();
@@ -250,8 +253,8 @@ public class VentasDal {
                     modelo.setFacturaNitCertificador(json.getString("NitCertificador"));
                     modelo.setFacturaNombreCertificador(json.getString("NombreCertificador"));
 
-                    sql = "insert into almacen.factura values (?,(SELECT IFNULL(MAX(fac_numero), 0)+1 FROM almacen.factura u where fac_serie ='" + modelo.getFacturaSerie() + "'),"
-                            + "(SELECT MAX(prefac_id) FROM almacen.prefactura u),?,?," + modelo.getFacturaSubtotal() + "," + modelo.getFacturaTotal() + "," + modelo.getFacturaDescuento() + ","
+                    sql = "insert into factura values (?,(SELECT IFNULL(MAX(fac_numero), 0)+1 FROM factura u where fac_serie ='" + modelo.getFacturaSerie() + "'),"
+                            + "(SELECT MAX(prefac_id) FROM prefactura u),?,?," + modelo.getFacturaSubtotal() + "," + modelo.getFacturaTotal() + "," + modelo.getFacturaDescuento() + ","
                             + "'" + modelo.getFacturaFechaCertificacion() + "',?,null," + (!modelo.getFacturaPagoEfectivo().equals("") ? modelo.getFacturaPagoEfectivo() : "0") + "," + (!modelo.getFacturaPagoTarjeta().equals("") ? modelo.getFacturaPagoTarjeta() : "0") + ","
                             + "'" + (!modelo.getFacturaReferenciaTarjeta().equals("") ? modelo.getFacturaReferenciaTarjeta() : "N/A") + "'," + (!modelo.getFacturaCredito().equals("") ? modelo.getFacturaCredito() : "0") + ","
                             + "?,?,?,?,?,?,"
@@ -317,7 +320,7 @@ public class VentasDal {
                 + " trim(ven_total)"
                 //   + " trim(ven_nit),"
                 //   + " trim(ven_nombre)"
-                + " from almacen.ventas where ven_prod_codigo = '" + codigo + "' ";
+                + " from ventas where ven_prod_codigo = '" + codigo + "' ";
         try {
             conexion = cnn.Conexion();
             st = conexion.createStatement();
@@ -362,7 +365,7 @@ public class VentasDal {
                 + " trim(ven_total)"
                 //  + " trim(ven_nit),"
                 //   + " trim(ven_nombre)"
-                + " from almacen.ventas order by  ven_prod_codigo asc";
+                + " from ventas order by  ven_prod_codigo asc";
 
         try {
             conexion = cnn.Conexion();
@@ -405,7 +408,7 @@ public class VentasDal {
         List<FacturaMd> allVentas = new ArrayList<FacturaMd>();
         String query = "select a.fac_autorizacion, a.fac_fecha_alta, a.fac_usuario_alta ,a.fac_total,a.fac_estado,a.fac_tipo_pago,\n"
                 + "       c.cl_nombre, c.cl_nit\n"
-                + "from almacen.factura a, almacen.prefactura p, almacen.cliente c\n"
+                + "from factura a, prefactura p, cliente c\n"
                 + "where a.fac_pre_numero = p.prefac_id and p.prefac_cl_id = c.CL_ID and fac_nombre_certificador !='VALE'";
 
         try {
@@ -446,7 +449,7 @@ public class VentasDal {
     /* String nombre*/) throws SQLException, ClassNotFoundException {
         Statement st = null;
         ResultSet rs = null;
-        String sql = "insert into almacen.ventas"
+        String sql = "insert into ventas"
                 + "(ven_prod_codigo,"
                 + " ven_correlativo,"
                 + " ven_cantidad,"
@@ -512,7 +515,7 @@ public class VentasDal {
             conexion.setAutoCommit(false);
             st = conexion.createStatement();
 
-            st.executeUpdate("update almacen.ventas set ven_correlativo= '" + correlativo + "'"
+            st.executeUpdate("update ventas set ven_correlativo= '" + correlativo + "'"
                     + ",ven_cantidad = '" + cantidad + "'"
                     + ",ven_precio = '" + precio + "'"
                     + ",ven_usuario = '" + usuario + "'"
@@ -550,7 +553,7 @@ public class VentasDal {
             System.out.println("Eliminar " + codigo);
             st = conexion.createStatement();
 
-            st.executeUpdate("delete almacen.ventas where ven_prod_codigo = '" + codigo + "' ");
+            st.executeUpdate("delete ventas where ven_prod_codigo = '" + codigo + "' ");
             Clients.showNotification("REGISTRO ELIMINADO <br/> CON EXITO  <br/>");
             System.out.println("Eliminacion Exitosa.! ");
             st.close();
@@ -569,7 +572,7 @@ public class VentasDal {
     public List<VentasMd> Correlativo(String codigo) throws ClassNotFoundException, SQLException {
         Statement st = null;
         ResultSet rs = null;
-        String query = "select count(ven_correlativo)+1 as correlativo, ven_precio from almacen.ventas where ven_prod_codigo='" + codigo + "' ";
+        String query = "select count(ven_correlativo)+1 as correlativo, ven_precio from ventas where ven_prod_codigo='" + codigo + "' ";
         List<VentasMd> allVentas = new ArrayList<VentasMd>();
         try {
             conexion = cnn.Conexion();
@@ -608,7 +611,7 @@ public class VentasDal {
             System.out.println("Actualizar " + codigo);
             st = conexion.createStatement();
 
-            st.executeUpdate("update almacen.productos "
+            st.executeUpdate("update productos "
                     + "set prod_saldo = prod_saldo -" + valor + " "
                     + " where prod_codigo = '" + codigo + "'  ");
 
@@ -632,7 +635,7 @@ public class VentasDal {
     public String Existencia(String codigo) throws ClassNotFoundException, SQLException {
         Statement st = null;
         ResultSet rs = null;
-        String query = "select prod_saldo from almacen.productos where prod_codigo='" + codigo + "' ";
+        String query = "select prod_saldo from productos where prod_codigo='" + codigo + "' ";
         String resp = "";
         try {
             conexion = cnn.Conexion();
@@ -799,6 +802,7 @@ public class VentasDal {
             }
 
         } catch (Exception e) {
+            System.out.println("error "+e);
         } finally {
             if (smt != null) {
                 smt.close();
@@ -837,6 +841,72 @@ public class VentasDal {
                 + "                       IFNULL(FORMAT(D.DET_DESCUENTO,2),0),\n"
                 + "                       IFNULL(D.DET_CANTIDAD,0)\n"
                 + "                FROM factura F,detalle_prefactura D,productos P\n"
+                + "                WHERE D.DET_PRO_ID = P.PRO_ID and F.fac_pre_numero = D.DET_PREFAC_ID \n";
+
+        if (Autorizacion.equals("")) {
+            sql += " AND D.DET_PREFAC_ID =(select IFNULL(MAX(PREFAC_ID),0) FROM prefactura J)";
+        } else {
+            sql += " and F.fac_autorizacion ='" + Autorizacion + "'";
+        }
+
+        try {
+            smt = conn.prepareStatement(sql);
+            result = smt.executeQuery();
+
+            while (result.next()) {
+                Buscar = new DetalleFacturaMd();
+
+                Buscar.setDetProductoId(result.getString(1));
+                Buscar.setDetProductoDescripcion(result.getString(2));
+                Buscar.setDetProductoTipo(result.getString(3));
+                Buscar.setDetProductoMarca(result.getString(4));
+                Buscar.setDetProductoPresentacion(result.getString(5));
+                Buscar.setDetProductoConversion(result.getString(6));
+                Buscar.setDetProductoPrecioVenta(result.getString(7));
+                Buscar.setProductoDescuento(result.getString(8));
+                Buscar.setProductoCantidad(result.getString(9));
+
+                lista.add(Buscar);
+
+            }
+        } catch (Exception e) {
+        } finally {
+            if (smt != null) {
+                smt.close();
+            }
+            if (result != null) {
+                smt.close();
+            }
+            if (conn != null) {
+                conex.cerrar();
+                conn.close();
+                conn = null;
+            }
+        }
+        return lista;
+    }
+    
+     public List<DetalleFacturaMd> BusDetaFac2Tabla(String Autorizacion) throws SQLException {
+        PreparedStatement smt = null;
+        Connection conn;
+        Conexion conex = new Conexion();
+        conn = conex.Conexion();
+        ResultSet result = null;
+
+        List<DetalleFacturaMd> lista = new ArrayList<DetalleFacturaMd>();
+
+        DetalleFacturaMd Buscar = null;
+
+        String sql = "SELECT D.DET_PRO_ID,\n"
+                + "                       IFNULL(P.PRO_DESCRIPCION,' '),\n"
+                + "                       IFNULL(P.PRO_TIPO,' '),\n"
+                + "                       IFNULL(P.PRO_MARCA,' '),\n"
+                + "                       IFNULL(P.PRO_PRESENTACION,' '),\n"
+                + "                       (CASE P.PRO_CONVERSION WHEN null THEN ' ' WHEN 0 THEN ' ' ELSE 'X '||P.PRO_CONVERSION END),\n"
+                + "                       IFNULL(FORMAT(D.DET_PRECIO_VENTA,2),0),\n"
+                + "                       IFNULL(FORMAT(D.DET_DESCUENTO,2),0),\n"
+                + "                       IFNULL(D.DET_CANTIDAD,0)\n"
+                + "                FROM factura F,detalle_prefactura D,productos2 P\n"
                 + "                WHERE D.DET_PRO_ID = P.PRO_ID and F.fac_pre_numero = D.DET_PREFAC_ID \n";
 
         if (Autorizacion.equals("")) {

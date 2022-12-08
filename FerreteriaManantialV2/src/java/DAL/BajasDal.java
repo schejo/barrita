@@ -28,7 +28,7 @@ public class BajasDal {
                 + " trim(baj_usuario,)"
                 + " trim(baj_fecha,)"
                 + " trim(baj_total)"
-                + " from almacen.bajas where baj_pro_codigo = '" + codigo + "' ";
+                + " from bajas where baj_pro_codigo = '" + codigo + "' ";
         try {
             conexion = cnn.Conexion();
             st = conexion.createStatement();
@@ -70,7 +70,7 @@ public class BajasDal {
                 + " trim(baj_usuario),"
                 + " trim(DATE_FORMAT(baj_fecha,'%d/%m/%Y')),"
                 + " trim(baj_total)"
-                + " from almacen.bajas order by  baj_pro_codigo asc";
+                + " from bajas order by  baj_pro_codigo asc";
 
         try {
             conexion = cnn.Conexion();
@@ -107,7 +107,7 @@ public class BajasDal {
             String usuario, String fecha,/* String descuento,*/ String total) throws SQLException, ClassNotFoundException {
         Statement st = null;
         ResultSet rs = null;
-        String sql = "insert into almacen.bajas"
+        String sql = "insert into bajas"
                 + "(baj_pro_codigo,"
                 + " baj_correlativo,"
                 + " baj_cantidad,"
@@ -165,7 +165,7 @@ public class BajasDal {
             System.out.println("Actualizar " + codigo);
             st = conexion.createStatement();
 
-            st.executeUpdate("update almacen.bajas set"
+            st.executeUpdate("update bajas set"
                     + ",baj_correlativo = '" + correlativo + "'"
                     + ",baj_cantidad = '" + cantidad + "'"
                     + ",baj_precio = '" + precio + "'"
@@ -202,7 +202,7 @@ public class BajasDal {
             System.out.println("Eliminar " + codigo);
             st = conexion.createStatement();
 
-            st.executeUpdate("delete almacen.ventas where ven_pro_codigo = '" + codigo + "' ");
+            st.executeUpdate("delete ventas where ven_pro_codigo = '" + codigo + "' ");
             Clients.showNotification("REGISTRO ELIMINADO <br/> CON EXITO  <br/>");
             System.out.println("Eliminacion Exitosa.! ");
             st.close();
@@ -222,7 +222,7 @@ public class BajasDal {
     public List<BajasMd> Correlativo(String codigo) throws ClassNotFoundException, SQLException {
         Statement st = null;
         ResultSet rs = null;
-        String query = "select count(baj_correlativo)+1 as correlativo, baj_precio from almacen.bajas where baj_pro_codigo='" + codigo + "' ";
+        String query = "select count(baj_correlativo)+1 as correlativo, baj_precio from bajas where baj_pro_codigo='" + codigo + "' ";
         List<BajasMd> allBajas = new ArrayList<BajasMd>();
         try {
             conexion = cnn.Conexion();
@@ -261,7 +261,7 @@ public class BajasDal {
             System.out.println("Actualizar " + codigo);
             st = conexion.createStatement();
 
-            st.executeUpdate("update almacen.productos "
+            st.executeUpdate("update productos "
                     + "set pro_stock_barrita = pro_stock_barrita-"+valor+" "
                     + " where pro_id = '"+codigo+"'  ");
 
@@ -285,7 +285,7 @@ public class BajasDal {
   public String Existencia(String codigo) throws ClassNotFoundException, SQLException{
         Statement st = null;
         ResultSet rs = null;
-        String query = "select pro_stock_barrita from almacen.productos where pro_id ='"+codigo+"' ";
+        String query = "select pro_stock_barrita from productos where pro_id ='"+codigo+"' ";
         String resp = "";
         try {
             conexion = cnn.Conexion();

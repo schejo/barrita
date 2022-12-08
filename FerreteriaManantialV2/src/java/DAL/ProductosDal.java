@@ -34,7 +34,7 @@ public class ProductosDal {
         String id = "";
         int resp = 0;
 
-        String query0 = " SELECT pro_id, concat(pro_descripcion,' Codigo: ',pro_id) FROM almacen.productos ";
+        String query0 = " SELECT pro_id, concat(pro_descripcion,' Codigo: ',pro_id) FROM productos ";
         try {
             conn = obtener.Conexion();
 
@@ -93,7 +93,7 @@ public class ProductosDal {
                 + "pro_minimo,\n"
                 + "pro_maximo,\n"
                 + "pro_ubicacion\n"
-                + " from almacen.productos\n"
+                + " from productos\n"
                 + "where pro_id = '" + codigo + "' ";
         try {
             conexion = cnn.Conexion();
@@ -159,7 +159,7 @@ public class ProductosDal {
                 + "pro_minimo,\n"
                 + "pro_maximo,\n"
                 + "pro_ubicacion\n"
-                + " from almacen.productos\n"
+                + " from productos\n"
                 + " order by  pro_id asc";
 
         try {
@@ -211,7 +211,7 @@ public class ProductosDal {
         Statement st = null;
         ResultSet rs = null;
 
-        String sql = "INSERT INTO almacen.productos"
+        String sql = "INSERT INTO productos"
                 + "(pro_id,\n"
                 + "pro_descripcion,\n"
                 + "pro_tipo,\n"
@@ -293,7 +293,7 @@ public class ProductosDal {
             System.out.println("Actualizar " + tipo_servicio);
             st = conexion.createStatement();
 
-            st.executeUpdate("update almacen.productos"
+            st.executeUpdate("update productos"
                     + " set pro_descripcion = '" + descripcion + "'"
                     + ",pro_tipo = '" + tipo + "'"
                     + ",pro_tipo_servicio = '" + tipo_servicio + "'"
@@ -342,7 +342,7 @@ public class ProductosDal {
             System.out.println("Eliminar " + codigo);
             st = conexion.createStatement();
 
-            st.executeUpdate("delete almacen.productos where pro_id = " + codigo + " ");
+            st.executeUpdate("delete productos where pro_id = " + codigo + " ");
             Clients.showNotification("REGISTRO ELIMINADO <br/> CON EXITO  <br/>");
             System.out.println("Eliminacion Exitosa.! ");
             st.close();

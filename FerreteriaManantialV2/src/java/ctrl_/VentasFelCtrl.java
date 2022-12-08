@@ -164,7 +164,19 @@ public class VentasFelCtrl extends Commons {
         super.doAfterCompose(comp);
 
         //llenar busqueda de proucto
-        lista = ctd.consulta();
+        
+         switch (session.getAttribute("SUCURSAL").toString()) {
+            case "1":
+                lista = ctd.consulta();
+                break;
+            case "2":
+                lista = ctd.consulta2Tabla();
+                break;
+            case "3":
+                lista = ctd.consulta();
+                break;
+
+        }
 
         EventQueues.lookup("myEventQueue", EventQueues.DESKTOP, true)
                 .subscribe(new EventListener() {
@@ -215,7 +227,7 @@ public class VentasFelCtrl extends Commons {
                         + "       IFNULL(FORMAT(P.PRO_PRECIO_VENTA,2),'-'),\n"
                         + "       IFNULL(FORMAT(IFNULL(P.PRO_DESCUENTO,0),2),'-'),\n"
                         + "       IFNULL(P.pro_stock_barrita,0)\n"
-                        + "FROM almacen.productos P  ORDER BY P.PRO_DESCRIPCION ASC", cbxDetalleBusqueda);
+                        + "FROM productos P  ORDER BY P.PRO_DESCRIPCION ASC", cbxDetalleBusqueda);
 
                 break;
             case "2":
@@ -248,7 +260,7 @@ public class VentasFelCtrl extends Commons {
                         + "       IFNULL(FORMAT(P.PRO_PRECIO_VENTA,2),'-'),\n"
                         + "       IFNULL(FORMAT(IFNULL(P.PRO_DESCUENTO,0),2),'-'),\n"
                         + "       IFNULL(P.pro_stock_barrita,0)\n"
-                        + "FROM almacen.productos P  ORDER BY P.PRO_DESCRIPCION ASC", cbxDetalleBusqueda);
+                        + "FROM productos P  ORDER BY P.PRO_DESCRIPCION ASC", cbxDetalleBusqueda);
 
                 break;
 
@@ -839,11 +851,25 @@ public class VentasFelCtrl extends Commons {
 
     public void PDF(FacturaMd enc/*, java.util.List<DetalleFacturaMd> lista*/) throws SQLException {
         //  String ano_arribo="", num_Arribo="";
+       List<DetalleFacturaMd> lista = new ArrayList<DetalleFacturaMd>();
 
         String buque = "";
         DecimalFormat formato = new DecimalFormat("#.00");
 
-        List<DetalleFacturaMd> lista = ven.BuscaDetallesFactura("");
+              //lista = ven.BuscaDetallesFactura("");
+         switch (session.getAttribute("SUCURSAL").toString()) {
+            case "1":
+                lista = ven.BuscaDetallesFactura("");
+                break;
+            case "2":
+                lista = ven.BusDetaFac2Tabla("");
+
+                break;
+            case "3":
+                lista = ven.BuscaDetallesFactura("");
+                break;
+
+        }
 
         try {
             com.itextpdf.text.Document detalle = new com.itextpdf.text.Document(PageSize.LEGAL, 0, 390, 0, 0);

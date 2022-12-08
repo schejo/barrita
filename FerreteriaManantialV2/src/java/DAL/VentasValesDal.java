@@ -36,7 +36,7 @@ public class VentasValesDal {
             try {
                 int total = detalles.size() + 2;   //3 sql + un update = 4 cambiando 2 a 3 
 
-                String sql = "insert into almacen.prefactura values ((SELECT IFNULL(MAX(prefac_id), 0)+1 FROM almacen.prefactura u),"
+                String sql = "insert into prefactura values ((SELECT IFNULL(MAX(prefac_id), 0)+1 FROM prefactura u),"
                         + "?,?,?,?,?,?,now(),?,null,null,?)";
                 conn.setAutoCommit(false);
                 smt = conn.prepareStatement(sql);
@@ -53,7 +53,7 @@ public class VentasValesDal {
                 smt.close();
 
                 for (int i = 0; i < detalles.size(); i++) {
-                    sql = "insert into almacen.detalle_prefactura values ((SELECT MAX(prefac_id) FROM almacen.prefactura u),"
+                    sql = "insert into detalle_prefactura values ((SELECT MAX(prefac_id) FROM prefactura u),"
                             + "?,'" + detalles.get(i).getDetProductoPrecioVenta() + "','" + detalles.get(i).getProductoDescuento() + "',?)";
                     // conn.setAutoCommit(false);
                     smt = conn.prepareStatement(sql);
@@ -93,8 +93,8 @@ public class VentasValesDal {
 
                 }
 
-                sql = "insert into almacen.factura values (?,(SELECT IFNULL(MAX(fac_numero), 0)+1 FROM almacen.factura u where fac_serie ='" + modelo.getFacturaSerie() + "'),"
-                        + "(SELECT MAX(prefac_id) FROM almacen.prefactura u),?,?," + modelo.getFacturaSubtotal() + "," + modelo.getFacturaTotal() + "," + modelo.getFacturaDescuento() + ","
+                sql = "insert into factura values (?,(SELECT IFNULL(MAX(fac_numero), 0)+1 FROM factura u where fac_serie ='" + modelo.getFacturaSerie() + "'),"
+                        + "(SELECT MAX(prefac_id) FROM prefactura u),?,?," + modelo.getFacturaSubtotal() + "," + modelo.getFacturaTotal() + "," + modelo.getFacturaDescuento() + ","
                         + "now(),?,null," + (!modelo.getFacturaPagoEfectivo().equals("") ? modelo.getFacturaPagoEfectivo() : "0") + "," + (!modelo.getFacturaPagoTarjeta().equals("") ? modelo.getFacturaPagoTarjeta() : "0") + ","
                         + "'" + (!modelo.getFacturaReferenciaTarjeta().equals("") ? modelo.getFacturaReferenciaTarjeta() : "N/A") + "'," + (!modelo.getFacturaCredito().equals("") ? modelo.getFacturaCredito() : "0") + ","
                         + "?,?,?,?,?,?,"
@@ -161,7 +161,7 @@ public class VentasValesDal {
                 + " trim(ven_total)"
                 //   + " trim(ven_nit),"
                 //   + " trim(ven_nombre)"
-                + " from almacen.ventas where ven_prod_codigo = '" + codigo + "' ";
+                + " from ventas where ven_prod_codigo = '" + codigo + "' ";
         try {
             conexion = cnn.Conexion();
             st = conexion.createStatement();
@@ -209,7 +209,7 @@ public class VentasValesDal {
                 + " trim(ven_total)"
                 //  + " trim(ven_nit),"
                 //   + " trim(ven_nombre)"
-                + " from almacen.ventas order by  ven_prod_codigo asc";
+                + " from ventas order by  ven_prod_codigo asc";
 
         try {
             conexion = cnn.Conexion();
@@ -251,7 +251,7 @@ public class VentasValesDal {
     /* String nombre*/) throws SQLException, ClassNotFoundException {
         Statement st = null;
         ResultSet rs = null;
-        String sql = "insert into almacen.ventas"
+        String sql = "insert into ventas"
                 + "(ven_prod_codigo,"
                 + " ven_correlativo,"
                 + " ven_cantidad,"
@@ -317,7 +317,7 @@ public class VentasValesDal {
             conexion.setAutoCommit(false);
             st = conexion.createStatement();
 
-            st.executeUpdate("update almacen.ventas set ven_correlativo= '" + correlativo + "'"
+            st.executeUpdate("update ventas set ven_correlativo= '" + correlativo + "'"
                     + ",ven_cantidad = '" + cantidad + "'"
                     + ",ven_precio = '" + precio + "'"
                     + ",ven_usuario = '" + usuario + "'"
@@ -355,7 +355,7 @@ public class VentasValesDal {
             System.out.println("Eliminar " + codigo);
             st = conexion.createStatement();
 
-            st.executeUpdate("delete almacen.ventas where ven_prod_codigo = '" + codigo + "' ");
+            st.executeUpdate("delete ventas where ven_prod_codigo = '" + codigo + "' ");
             Clients.showNotification("REGISTRO ELIMINADO <br/> CON EXITO  <br/>");
             System.out.println("Eliminacion Exitosa.! ");
             st.close();
@@ -374,7 +374,7 @@ public class VentasValesDal {
     public List<VentasMd> Correlativo(String codigo) throws ClassNotFoundException, SQLException {
         Statement st = null;
         ResultSet rs = null;
-        String query = "select count(ven_correlativo)+1 as correlativo, ven_precio from almacen.ventas where ven_prod_codigo='" + codigo + "' ";
+        String query = "select count(ven_correlativo)+1 as correlativo, ven_precio from ventas where ven_prod_codigo='" + codigo + "' ";
         List<VentasMd> allVentas = new ArrayList<VentasMd>();
         try {
             conexion = cnn.Conexion();
@@ -413,7 +413,7 @@ public class VentasValesDal {
             System.out.println("Actualizar " + codigo);
             st = conexion.createStatement();
 
-            st.executeUpdate("update almacen.productos "
+            st.executeUpdate("update productos "
                     + "set pro_stock_barrita = pro_stock_barrita -" + valor + " "
                     + " where pro_id = '" + codigo + "'  ");
 
@@ -437,7 +437,7 @@ public class VentasValesDal {
     public String Existencia(String codigo) throws ClassNotFoundException, SQLException {
         Statement st = null;
         ResultSet rs = null;
-        String query = "select prod_stock from almacen.productos where prod_id='" + codigo + "' ";
+        String query = "select prod_stock from productos where prod_id='" + codigo + "' ";
         String resp = "";
         try {
             conexion = cnn.Conexion();

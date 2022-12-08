@@ -33,7 +33,7 @@ public class VentasServiciosDal {
                 + " trim(ven_descuento,)"
                 + " trim(ven_total,)"
                 + " trim(ven_tipo_pago)"
-                + " from almacen.ventas where ven_pro_codigo = '" + codigo + "' ";
+                + " from ventas where ven_pro_codigo = '" + codigo + "' ";
         try {
             conexion = cnn.Conexion();
             st = conexion.createStatement();
@@ -78,7 +78,7 @@ public class VentasServiciosDal {
                 + " trim(ven_descuento),"
                 + " trim(ven_total),"
                 + " trim(ven_tipo_pago)"
-                + " from almacen.ventas order by  ven_pro_codigo asc";
+                + " from ventas order by  ven_pro_codigo asc";
 
         try {
             conexion = cnn.Conexion();
@@ -118,7 +118,7 @@ public class VentasServiciosDal {
             String usuario, String fecha, String descuento, String total/*, String pago*/) throws SQLException, ClassNotFoundException {
         Statement st = null;
         ResultSet rs = null;
-        String sql = "insert into almacen.ventas"
+        String sql = "insert into ventas"
                 + "(ven_pro_codigo,"
                 + " ven_correlativo,"
                 + " ven_cantidad,"
@@ -182,7 +182,7 @@ public class VentasServiciosDal {
             System.out.println("Actualizar " + codigo);
             st = conexion.createStatement();
 
-            st.executeUpdate("update almacen.ventas set ven_correlativo= '" + correlativo + "'"
+            st.executeUpdate("update ventas set ven_correlativo= '" + correlativo + "'"
                     + ",ven_cantidad = '" + cantidad + "'"
                     + ",ven_precio = '" + precio + "'"
                     + ",ven_usuario = '" + usuario + "'"
@@ -220,7 +220,7 @@ public class VentasServiciosDal {
             System.out.println("Eliminar " + codigo);
             st = conexion.createStatement();
 
-            st.executeUpdate("DELETE almacen.ventas where ven_pro_codigo = '" + codigo + "' ");
+            st.executeUpdate("DELETE ventas where ven_pro_codigo = '" + codigo + "' ");
             Clients.showNotification("REGISTRO ELIMINADO <br/> CON EXITO  <br/>");
             System.out.println("Eliminacion Exitosa.! ");
             st.close();
@@ -241,8 +241,8 @@ public class VentasServiciosDal {
         Statement st = null;
         ResultSet rs = null;
         String query = "select count(a.ven_correlativo)+1 as correlativo, pro_precio_venta \n"
-                + "from almacen.ventas a,\n"
-                + "almacen.productos b\n"
+                + "from ventas a,\n"
+                + "productos b\n"
                 + "where b.pro_id='" + codigo + "' and a.ven_pro_codigo='" + codigo + "'; ";
         List<VentasServiciosMd> allVentas = new ArrayList<VentasServiciosMd>();
         try {
@@ -282,7 +282,7 @@ public class VentasServiciosDal {
             System.out.println("Actualizar " + codigo);
             st = conexion.createStatement();
 
-            st.executeUpdate("update almacen.productos "
+            st.executeUpdate("update productos "
                     + "set pro_stock_barrita = pro_stock_barrita -" + valor + " "
                     + " where pro_id = '" + codigo + "'  ");
 
@@ -306,7 +306,7 @@ public class VentasServiciosDal {
     public String Existencia(String codigo) throws ClassNotFoundException, SQLException {
         Statement st = null;
         ResultSet rs = null;
-        String query = "select pro_stock_barrita from almacen.productos where pro_id = '" + codigo + "' ";
+        String query = "select pro_stock_barrita from productos where pro_id = '" + codigo + "' ";
         String resp = "";
         try {
             conexion = cnn.Conexion();

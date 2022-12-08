@@ -42,7 +42,7 @@ public class KardexTipoDal {
                 + " WHEN 'O' then 'Otros' \n"
                 + " END AS TIPO, \n"
                 + " a.pro_stock_barrita \n"
-                + " FROM almacen.productos a\n"
+                + " FROM productos a\n"
                 + " WHERE a.pro_tipo = '" + tipo + "' ";
 
         System.out.println("que lleva tipo en DAL 2.: " + query);

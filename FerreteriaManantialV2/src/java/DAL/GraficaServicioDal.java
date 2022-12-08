@@ -29,7 +29,7 @@ public class GraficaServicioDal {
                     + "  when 'B' then 'BIEN'\n"
                     + "  END AS TIPO,\n"
                     + "  count(pro_id) as CANTIDAD\n"
-                    + "  from  almacen.productos\n"
+                    + "  from  productos\n"
                     + "  group by tipo";
            
 
@@ -77,7 +77,7 @@ public class GraficaServicioDal {
                     + "  when 'B' then 'BIEN'\n"
                     + "  END AS TIPO,\n"
                     + "  count(pro_id) as CANTIDAD\n"
-                    + "  from  almacen.productos\n"
+                    + "  from  productos\n"
                     + "  group by tipo";
 
             smt = conn.prepareStatement(sql);
