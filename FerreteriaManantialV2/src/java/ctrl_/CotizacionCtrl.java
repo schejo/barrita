@@ -154,6 +154,11 @@ public class CotizacionCtrl extends Commons {
         window.doModal();
     }
             public void onClick$btnBusca1(Event e) {
+                 txtProductoTipo.setValue("");
+        txtProductoDescripcion.setValue("");
+        txtProductoPrecio.setValue("");
+        txtProductoDescuento.setValue("");
+        txtProductoStock.setValue("");
         EventQueues.lookup("myEventQueue", EventQueues.DESKTOP, true)
                 .publish(new Event("onChangeNickname", null, lista));
 
@@ -513,8 +518,11 @@ public class CotizacionCtrl extends Commons {
 
         }
     }
+        public void onChange$txtProductoId(Event e) throws SQLException{
+        onOK$txtProductoId(e);
+    }
 
-    public void onChange$txtProductoId(Event evt) throws SQLException {
+    public void onOK$txtProductoId(Event evt) throws SQLException {
         ProductosDal pro = new ProductosDal();
         ProductosMd proMd = pro.BuscarProducto(txtProductoId.getText());
 
@@ -898,8 +906,10 @@ public class CotizacionCtrl extends Commons {
                            
                         } else {
                             for (CatalogosMd item : data) {
+                                if(data.size()==1){
                                 txtProductoId.setText(item.getCodemp());
-                                
+                                 txtProductoId.setFocus(true);
+                                }
                             }
                         }
                     }

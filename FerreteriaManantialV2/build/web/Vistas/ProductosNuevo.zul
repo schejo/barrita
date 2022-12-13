@@ -214,9 +214,7 @@
                                 <comboitem label = "PATIO" value = "P" /> 
                                 <comboitem label = "BODEGA 1 INTERIOR" value = "BI" />
                                 <comboitem label = "BODEGA 2" value = "B2" />
-                                <comboitem label = "BODEGA 3-PATIOS" value = "B3" />
-                                <comboitem label = "BODEGA 4-CARRIZAL" value = "B4" />
-                                <comboitem label = "FERRETERIA 2" value = "F2" />
+                                <comboitem label = "BODEGA 3-PATIOS" value = "B3" />                 
                                 
                             </combobox>
                         </n:div> 

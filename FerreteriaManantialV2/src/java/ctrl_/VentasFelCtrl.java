@@ -189,8 +189,10 @@ public class VentasFelCtrl extends Commons {
 
                         } else {
                             for (CatalogosMd item : data) {
+                                if(data.size()==1){
                                 txtProductoId.setText(item.getCodemp());
-
+                                 txtProductoId.setFocus(true);
+                                }
                             }
                         }
                     }
@@ -316,6 +318,11 @@ public class VentasFelCtrl extends Commons {
     }
 
     public void onClick$btnBusca1(Event e) {
+         txtProductoTipo.setValue("");
+        txtProductoDescripcion.setValue("");
+        txtProductoPrecio.setValue("");
+        txtProductoDescuento.setValue("");
+        txtProductoStock.setValue("");
         EventQueues.lookup("myEventQueue", EventQueues.DESKTOP, true)
                 .publish(new Event("onChangeNickname", null, lista));
 
@@ -405,8 +412,11 @@ public class VentasFelCtrl extends Commons {
             }
         }
     }
+        public void onChange$txtProductoId(Event e) throws SQLException{
+        onOK$txtProductoId(e);
+    }
 
-    public void onChange$txtProductoId(Event evt) throws SQLException {
+    public void onOK$txtProductoId(Event evt) throws SQLException {
         ProductosDal pro = new ProductosDal();
         ProductosMd proMd = pro.BuscarProducto(txtProductoId.getText());
 
@@ -499,7 +509,7 @@ public class VentasFelCtrl extends Commons {
     public void onSelect$cbxFacturaTipoPago(Event evt) {
         String TipoPago = cbxFacturaTipoPago.getSelectedItem().getValue().toString();
 
-        if (datos.size() > 0) {
+      //  if (datos.size() > 0) {
 
             if (TipoPago.equals("E")) {
                 txtEfectivo.setReadonly(true);
@@ -538,7 +548,7 @@ public class VentasFelCtrl extends Commons {
                 txtCredito.setReadonly(true);
                 txtReferencia.setReadonly(false);
             }
-        }
+      //  }
         LimpiarPagos();
 
         ActualizaTotales();
@@ -1152,7 +1162,7 @@ public class VentasFelCtrl extends Commons {
             cell2.setBorder(Rectangle.NO_BORDER);
             table2.addCell(cell2);
 
-            cell2 = new PdfPCell(new Phrase("MEDIO DE PAGO: " + enc.getFacturaTipoPago(), FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+            cell2 = new PdfPCell(new Phrase("MEDIO DE PAGO: " + cbxFacturaTipoPago.getSelectedItem().getLabel().toString(), FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
             cell2.setColspan(10);
             cell2.setBorder(Rectangle.NO_BORDER);
             cell2.setHorizontalAlignment(com.itextpdf.text.Element.ALIGN_CENTER);

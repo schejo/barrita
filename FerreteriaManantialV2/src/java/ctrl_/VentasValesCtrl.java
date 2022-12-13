@@ -212,8 +212,10 @@ public class VentasValesCtrl extends Commons {
 
                         } else {
                             for (CatalogosMd item : data) {
+                                if(data.size()==1){
                                 txtProductoId.setText(item.getCodemp());
-
+                                 txtProductoId.setFocus(true);
+                                }
                             }
                         }
                     }
@@ -291,6 +293,11 @@ public class VentasValesCtrl extends Commons {
     }
 
     public void onClick$btnBusca1(Event e) {
+         txtProductoTipo.setValue("");
+        txtProductoDescripcion.setValue("");
+        txtProductoPrecio.setValue("");
+        txtProductoDescuento.setValue("");
+        txtProductoStock.setValue("");
         EventQueues.lookup("myEventQueue", EventQueues.DESKTOP, true)
                 .publish(new Event("onChangeNickname", null, lista));
 
@@ -386,8 +393,11 @@ public class VentasValesCtrl extends Commons {
             }
         }
     }
+        public void onChange$txtProductoId(Event e) throws SQLException{
+        onOK$txtProductoId(e);
+    }
 
-    public void onChange$txtProductoId(Event evt) throws SQLException {
+    public void onOK$txtProductoId(Event evt) throws SQLException {
         ProductosDal pro = new ProductosDal();
         ProductosMd proMd = pro.BuscarProducto(txtProductoId.getText());
         if (proMd.getResp().equals("0")) {
@@ -518,7 +528,7 @@ public class VentasValesCtrl extends Commons {
     public void onSelect$cbxFacturaTipoPago(Event evt) {
         String TipoPago = cbxFacturaTipoPago.getSelectedItem().getValue().toString();
 
-        if (datos.size() > 0) {
+      //  if (datos.size() > 0) {
 
             //EFECTIVO
             if (TipoPago.equals("E")) {
@@ -557,7 +567,7 @@ public class VentasValesCtrl extends Commons {
                 txtTarjeta.setReadonly(true);
                 txtCredito.setReadonly(true);
                 txtReferencia.setReadonly(false);
-            }
+           // }
 
         }
         LimpiarPagos();
