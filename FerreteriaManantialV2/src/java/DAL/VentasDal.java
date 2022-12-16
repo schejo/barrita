@@ -153,7 +153,7 @@ public class VentasDal {
                         + " 'Tipo_Documento':'FACT',\n"
                         + " 'Fecha_Emision':'" + dtf.format(Calendar.getInstance().getTime()) + "',\n"
                         + " 'Hora_Emision':'" + dth.format(Calendar.getInstance().getTime()) + "',\n"
-                        + " 'Ambiente':'1'\n"//para produccion es el 2 y para pruebas es el 1
+                        + " 'Ambiente':'2'\n"//para produccion es el 2 y para pruebas es el 1
                         + "},\n"
                         + "'Receptor':{\n"
                         + " 'Nit_Receptor':'" + modelo.getFacturaClienteNit() + "',\n"

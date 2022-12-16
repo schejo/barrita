@@ -127,7 +127,7 @@ public class Util {
     }
 
     public String ApiToken(int ambiente) {
-        String Direccion = "", Xml = "{\"Usuario\": \"FELBD\", \"Clave\": \"SmVkaS0xMTQ5NjA=\"}";
+        String Direccion = "", Xml = "{\"Usuario\": \"FELBD\", \"Clave\": \"AVNS_rNNIHPjHvs6wJR1yuyh\"}";
 
         Direccion = "http://" + ip + ":8080/FEL/api/Token";
 
