@@ -129,12 +129,12 @@ public class KardexDal {
                 +" when 'B4' then 'BODEGA 4-CARRIZAL' \n"
                 +" END AS UBICACION, \n"
                 + "a.pro_stock_carrizal\n"
-                + "from productos a where pro_carrizal=1";
+                + "from productos2 a where pro_carrizal=1";
 
-        String query2 = "select a.pro_id,a.pro_descripcion,\n"
-                + "                a.pro_minimo, SUM( a.pro_precio_venta) as TOTAL1, a.pro_maximo,\n"
-                + "                a.pro_ubicacion, SUM(a.pro_stock) as TOTAL2\n"
-                + "                from productos a ";
+//        String query2 = "select a.pro_id,a.pro_descripcion,\n"
+//                + "                a.pro_minimo, SUM( a.pro_precio_venta) as TOTAL1, a.pro_maximo,\n"
+//                + "                a.pro_ubicacion, SUM(a.pro_stock) as TOTAL2\n"
+//                + "                from productos a ";
 
         try {
             conexion = cnn.Conexion();

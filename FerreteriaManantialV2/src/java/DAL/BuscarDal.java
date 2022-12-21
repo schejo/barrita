@@ -35,7 +35,7 @@ public class BuscarDal {
                 + "                when 'B4' then 'BODEGA 4-CARRIZAL' \n"
                 + "                when 'I' then 'ALA 2, IZQUIERDA' \n"
                 + "                when 'B3' then 'BODEGA 3-PATIOS' \n"
-                + "                when 'P' then 'PASILLO , IZQUIEDO'\n"
+                + "                when 'P' then 'PATIO'\n"
                 + "                when 'BI' then 'BODEGA 1 INTERIOR' \n"
                 + "                END AS UBICACION,\n"
                 + "                pro_stock_barrita\n"

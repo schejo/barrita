@@ -72,16 +72,26 @@ public class ProductosNuevoCtrl extends GenericForwardComposer {
     }
 
     public void onChange$ubiFerrete(Event e) {
-        liberar();
-        clear();
-        codPro.setFocus(true);
-        if (ubiFerrete.getSelectedItem().getValue().toString().equals("1")) {
+        
+       
+        if (ubiFerrete.getSelectedItem().getValue().toString().equals("1")&&session.getAttribute("SUCURSAL").toString().equals("1")) {
             allProductos = ProductoDal.allCL();
             busPro.setModel(new ListModelList(allProductos));
+             liberar();
+        clear();
+        codPro.setFocus(true);
         } else {
-            if (ubiFerrete.getSelectedItem().getValue().toString().equals("2")) {
+            if (ubiFerrete.getSelectedItem().getValue().toString().equals("2")&&session.getAttribute("SUCURSAL").toString().equals("2")) {
                 allProductos = ProductoDal.MosProc2();
                 busPro.setModel(new ListModelList(allProductos));
+                 liberar();
+        clear();
+        codPro.setFocus(true);
+            }else{
+                 Clients.showNotification("Debe seleccionar su sucursal" + "<br/>",
+                    Clients.NOTIFICATION_TYPE_WARNING, null, "middle_center", 3000);
+                 bloquear();
+                 
             }
         }
     }
