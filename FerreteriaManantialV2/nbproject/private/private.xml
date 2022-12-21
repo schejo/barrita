@@ -6,6 +6,12 @@
             <file>file:/C:/Users/Informatica/Documents/NetBeansProjects/FerreteriaManantial/src/java/ctrl_/VentasFelCtrl.java</file>
             <file>file:/C:/Users/Informatica/Documents/NetBeansProjects/FerreteriaManantial/src/java/ctrl_/VentasValesCtrl.java</file>
         </group>
-        <group/>
+        <group>
+            <file>file:/C:/Users/HP%2015/Documents/Git%20Produccion/barrita/FerreteriaManantialV2/web/Vistas/Usuarios.zul</file>
+            <file>file:/C:/Users/HP%2015/Documents/Git%20Produccion/barrita/FerreteriaManantialV2/src/java/ctrl_/BuscarCtrl.java</file>
+            <file>file:/C:/Users/HP%2015/Documents/Git%20Produccion/barrita/FerreteriaManantialV2/src/java/DAL/BuscarDal.java</file>
+            <file>file:/C:/Users/HP%2015/Documents/Git%20Produccion/barrita/FerreteriaManantialV2/web/Vistas/ProductosNuevo.zul</file>
+            <file>file:/C:/Users/HP%2015/Documents/Git%20Produccion/barrita/FerreteriaManantialV2/src/java/Conexion/Conexion.java</file>
+        </group>
     </open-files>
 </project-private>

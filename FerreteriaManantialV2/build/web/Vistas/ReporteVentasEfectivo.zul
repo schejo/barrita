@@ -1,0 +1,41 @@
+<zk xmlns:n="native">
+    <div>
+        <n:br/>
+        <n:br/>
+        <n:br/>
+        <n:br/>
+    </div>
+    <div class="col col-md-12 col-sm-12" apply="ctrl_.ReporteVentasEfectivoCtrl" >
+        <div class="col col-md-12 col-sm-12 text-center"> 
+            <div class="col col-md-12 col-xs-12">
+                <label value="REPORTE DE VENTAS EN EFECTIVO" style="font-size:25px;font-weight:bold;color:blue;" />
+            </div>
+            <n:br/>
+            <n:br/>
+            <n:br/>
+            
+            <div sclass="col-md-12 col-sm-12 text-center" > 
+               
+                <label value="FECHA DEL.: " style="color: blue; font-weight: bold; font-size: 20px;"/>
+                <datebox id="anio" cols="11"   format="dd/MM/yyyy" locale="gt" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black;"/>
+                <label value="AL.: " style="color: blue; font-weight: bold; font-size: 20px;"/>
+                <datebox id="fechaF" cols="11"   format="dd/MM/yyyy" locale="gt" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:black;"/>
+                
+            </div> 
+            
+            <n:br/>
+            <n:br/>
+            <n:br/>
+            
+            <div class="col col-md-12 col-xs-12">
+                
+                <button sclass="btn btn-success" id="btnDescargar" label="Descarga Reporte" iconSclass="z-icon-download" />    
+                
+            </div>
+        </div>
+    </div>
+</zk>
+
+
+
+

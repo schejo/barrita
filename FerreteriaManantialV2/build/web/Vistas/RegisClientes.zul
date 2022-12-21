@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns:n="native" >
+    
+     <window id="modalDialog"  position="center,center" closable="true"
+             apply="ctrl_.Clientes1Ctrl" >
+    
+   
+        
+        <n:div class="form-control col-lg-12 col-md-12" style="border: none;  height: 100%;" >
+            <n:div class="col-lg-2" style="border: none; height: 90%; " ></n:div>
+            <n:div class="col-lg-8 col-md-9 d-flex justify-content-center" style="border: none; height: 90%; " >
+             
+                <n:h1 style="color:blue;">NUEVO CLIENTE</n:h1>
+           
+              
+                <!-- FILA #01 -->
+                
+                <n:div class="form-group col-lg-10  col-md-10 text-center dvfl" style="border: 4px solid;">
+                    <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="">
+                    
+                    
+                        <n:div class="form-group col-lg-8 col-md-4 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Nombre Cliente" style="" />
+                            <textbox  class="form-control" id="Ncliente" value="" cols="20" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:blue; text-transform:uppercase;"/>
+                        </n:div>
+                    
+                  
+                        <n:div class="form-group col-lg-4 col-md-4 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Nit Cliente" />
+                            <textbox class="form-control" id="NitCliente" maxlength="15"    cols="20" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:blue;"/> 
+                                       
+                        </n:div>
+                    </n:div>
+                  
+                    <!--   #02 -->
+            
+                    <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="">
+                        
+                        <n:div class="form-group col-lg-8 col-md-4 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Direccion" />
+                            <textbox class="form-control" id="Direccion" value="" cols="20" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:blue; text-transform:uppercase;"/>
+                        </n:div>
+                        
+                        <n:div class="form-group col-lg-4 col-md-4 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Telefono" />
+                            <doublebox class="form-control" id="Telefono" maxlength="8" constraint = "no negative,no zero: debe ingresar un telefono valido"   cols="20" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:blue;"/>              
+                        </n:div>
+                        
+                    
+                       
+                        
+                    </n:div>
+                    
+                    <!-- FILA #03 -->
+                    
+                    <n:div class="form-group col-lg-12 col-md-12 text-center dvfl" style="">
+
+                        <n:div class="form-group col-lg-8 col-md-8 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Correo" />
+                            <textbox class="form-control" id="Correo"   value="" cols="15" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:blue;"/>
+                        </n:div>
+                        
+                        <n:div class="form-group col-lg-4 col-md-4 dvlb" style="border: none;">
+                            <label class="txtlbs" value="Usuario" />
+                            <textbox class="form-control" id="Usu" value="" readonly="true" cols="20" style="font-weight: bold; font-size: 15px; margin-left:0px; heigh:20px; color:blue; text-transform:uppercase;"/>
+                        </n:div>
+
+                    
+                       
+              
+                    </n:div>
+                </n:div>
+               
+                <!-- FILA #04 -->
+                
+                <div class="form-group col-lg-12 col-md-12 text-center" style="border: none; margin-top:0px; margin-bottom:10px;">
+                    <button id="btnNuevo" label="Nuevo" image="bootstrap/img/nuevo.png" orient="vertical" height="50px" width="75px"/> 
+                                                                 
+                    <button id="btnGuardar" label="Guardar" image="bootstrap/img/salvar2.png" orient="vertical" height="50px" width="75px"/>
+
+                    <!-- <button id="btnDelete" label="Eliminar" image="bootstrap/img/borrar.png" orient="vertical" height="50px" width="75px"/>-->
+                    <button id="btnSalir1" label="Salir" image="bootstrap/img/cerrar.png"  orient="vertical" height="50px" width="75px"/>
+
+                </div>
+            </n:div>
+        </n:div>
+  
+     </window>
+</zk>
+
+

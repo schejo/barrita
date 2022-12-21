@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?page title="Sistema de Inventarios" contentType="text/html;charset=UTF-8"?>
+<?link href="bootstrap/css/bootstrap.css" rel="stylesheet"?>
+<?link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet"?>
+<?link href="css/principal.css" rel="stylesheet"?>
+
+<zk xmlns:n="native">
+    <style>
+        .dvbanner {
+        background: url("bootstrap/img/fondo.png") repeat !important; }
+    </style>
+    
+    <window id="wdwMenu"  height="100%" contentStyle="overflow:auto;" apply="environment.menu">
+        
+        
+        <div class="row text-center" height="100%" style=" border: none; margin: 0; padding:0;  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(172,216,230,0.5)), to(rgba(0,0,0,0.0)));">
+            <n:div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style=" border: none; margin-top:5px; margin-bottom: 5px; padding:0;">
+                <n:div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left dvbanner" width="100%" style="margin:0;">
+                    <n:div class="form-group row col-lg-1 col-md-2 col-sm-2 col-xs-3 text-left" style="border:none; margin-left: 0; margin-right:0; padding-right: 0;">
+                        <image src="bootstrap/img/logo.png" width="100px" height="100px" style="margin-top: 0px; margin-left:0; margin-right: 0; padding-right:0;" />
+                    </n:div>
+                    <n:div class="form-group col-md-5 text-left" style="border: none; padding-left:0; margin-left:0; ">
+                        <n:div sclass="form-group row col-lg-1 col-md-1 col-sm-2 text-left" style="border:none; margin-top:20px; margin-left:0; padding-left:0px;">
+                            <label value="DISTRIBUIDORA LA BARRITA, S.A" style="font-weight: bold; font-size: 25px; color: orange; margin-left:0; padding-left:0px;"/>
+                        </n:div>
+                
+                        <n:div sclass="form-group row col-lg-1 col-md-1 col-sm-1 text-left" style="border:none; margin-left:0; padding-left:0px;">
+                            <label value="Sistema"  style="font-weight: bold; color: orange; font-size: 20px; font-style: italic;" />
+                        </n:div>
+                        <n:div sclass="form-group row col-lg-1 col-md-1 col-sm-1 text-left" style="border:none; margin-left:0; padding-left: 0px;">
+                            <label value="Versión 1.0, 1/04/2022," style="font-weight: bold; font-size: 16px; color: orange;"/>
+                        </n:div>
+                        <n:div sclass="form-group row col-lg-1 col-md-1 col-sm-1 text-left" style="border:none; margin-left:0; padding-left: 0px;">
+                            <label value="Creado por: Systec, RA,FYC" style="font-weight: bold; font-size: 16px; color: orange;"/>
+                        </n:div>
+                    </n:div>      
+                    <n:div class="col text-right" style="margin-top: 15px;padding-right:15px; border:none;">
+                        <n:div sclass="form-group row col-lg-1 col-md-1 col-sm-1 col-xs-2 text-right" style="border: none; margin-right:30px; padding-right: 0;">
+                            <image src="bootstrap/img/usuario.png" width="40px" height="40px" style="margin-top: 10px; margin-left:0; padding:0;" />
+                        </n:div>
+                        <n:div sclass="form-group row col-lg-1 col-md-1 col-sm-1 text-left" style="border:none; margin-left:0; padding-right: 0;">
+                            <label id="lblUser" value="usuario" style="font-weight: bold; font-size: 16px; color: orange; margin-right: 25px;" />
+                        </n:div>
+                    </n:div>
+                </n:div>
+                
+                <n:div class="col-lg-12 col-xs-12 " width="100%" style="padding:0;">
+                    <n:div class="col-lg-11 col-xs-12 " width="100%" style="border:none; margin:0; padding:0;">
+                        <menubar id="menubar1" width="100%">
+                            
+                            <menu id="menuRPublic1" label="CATALOGOS" image= "bootstrap/img/casa.png">
+                                <menupopup>  
+                                    <menuitem label="USUARIOS" id="ItemA" image= "bootstrap/img/casa.png"/> 
+                                    <!--  <menuitem label="PRODUCTOS" id="ItemAB" image= "bootstrap/img/casa.png"/>-->
+                                    <menuitem label="PRODUCTOS NUEVO" id="ItemABN" image= "bootstrap/img/casa.png"/>
+                                    <menuitem label="CLIENTES" id="ItemCli" image= "bootstrap/img/casa.png"/>
+                                    <menuitem label="PROVEEDORES" id="ItemPro" image= "bootstrap/img/casa.png"/>
+                                </menupopup>
+                            </menu> 
+                        
+                            <menu id="menuRPublic2" label="PROCESOS" image="bootstrap/img/reporte1.png" >
+                                <menupopup>  
+                                    <menuitem label="COMPRA DE  PRODUCTOS" id="ItemB" image="bootstrap/img/reporte1.png" /> 
+                                    <menuitem label="VENTAS DE PRODUCTOS FEL" id="ItemBA" image="bootstrap/img/reporte1.png" /> 
+                                    <menuitem label="VENTAS CON VALES" id="ItemBV" image="bootstrap/img/reporte1.png" /> 
+                                   <!-- <menuitem label="VENTAS PARA REBAJAS" id="ItemBD" image="bootstrap/img/reporte1.png" />-->
+                                    <!--   <menuitem label="VENTAS FACTURADAS - FEL" id="ItemBE" image="bootstrap/img/reporte1.png" /> --> 
+                                   <!-- <menuitem label="BAJAS" id="ItemBB" image="bootstrap/img/reporte1.png" /> -->
+                                    <menuitem label="BUSCAR" id="ItemBC" image="bootstrap/img/reporte1.png" /> 
+                                   <!-- <menuitem label="ACTUALIZA COMPRAS" id="ItemBF" image="bootstrap/img/reporte1.png" /> -->
+                                   <!-- <menuitem label="ACTUALIZA VENTAS" id="ItemBG" image="bootstrap/img/reporte1.png" /> -->
+                                    <menuitem label="COTIZACION" id="ItemCOT" image="bootstrap/img/reporte1.png" /> 
+                                    <menuitem label="CONTROL DE CREDITOS" id="ItemCREDI" image="bootstrap/img/reporte1.png" /> 
+
+                                </menupopup>
+                            </menu> 
+                         
+                            <menu id="menuRPublic3" label="REPORTES" image="bootstrap/img/query.png" >
+                                <menupopup>  
+                                    <menuitem label="KARDEX DE PRODUCTOS" id="ItemC" image="bootstrap/img/query.png"/> 
+                                    <menuitem label="VENTAS TIPO PAGO" id="ItemCA" image="bootstrap/img/query.png"/>
+                                    <menuitem label="REPORTE DE COMPRAS" id="ItemCB" image="bootstrap/img/query.png"/>
+                                    <menuitem label="KARDEX POR TIPO" id="ItemCC" image="bootstrap/img/query.png"/>
+                                   <!-- <menuitem label="KARDEX POR UBICACION" id="ItemCD" image="bootstrap/img/query.png"/>-->
+                                    <menuitem label="VENTAS DEL DIA" id="ItemCE" image="bootstrap/img/query.png"/>
+                                   <!-- <menuitem label="REPORTE DE VENTAS EN EFECTIVO" id="ItemCF" image="bootstrap/img/query.png"/>-->
+                                    <!--<menuitem label="REPORTE DE STOCK MENOR DE 5 PRODUCTOS" id="ItemCG" image="bootstrap/img/query.png"/>-->
+                                    <menuitem label="REPORTE DE DEUDORES" id="ItemDUE" image="bootstrap/img/query.png"/>
+
+                                    <menuitem label="REPORTE DE FACTURAS FEL" id="ItemCH" image="bootstrap/img/query.png"/>
+                                    
+                                </menupopup>
+                            </menu> 
+                            
+                            <!--  <menu id="menuRPublic4" label="GRAFICAS" image="bootstrap/img/datosb.png" >
+                                <menupopup>  
+                                    <menuitem label="GRAFICA POR TIPOS" id="ItemD" image="bootstrap/img/datosb.png"/> 
+                                    <menuitem label="GRAFICA POR UBICACION" id="ItemDB" image="bootstrap/img/datosb.png"/>
+                                    <menuitem label="GRAFICA POR CATEGORIAS" id="ItemDA" image="bootstrap/img/datosb.png"/>
+                                    <menuitem label="GRAFICA VENTAS EN EFECTIVO" id="ItemDC" image="bootstrap/img/datosb.png"/>
+                                </menupopup>
+                            </menu> -->
+                            
+                        </menubar>
+                    </n:div>
+                    
+                    <n:div class="col-lg-1 text-right" width="100%" style="border:none; margin:0; padding:0;">
+                        <menubar class="col-xs-12 text-right" id="menubar" >
+                            <menu id="menuSesion" label="Sesion " image="bootstrap/img/usuario.png" style="text-align:right;">
+                                <menupopup>
+                                    <menuseparator/>
+                                    <menuitem label="Salir" id="ItemSalir" image="bootstrap/img/salir.png"/>
+                                </menupopup>
+                            </menu>
+                        </menubar>
+                    </n:div>
+                </n:div>
+                
+                <n:div sclass="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" width="100%" height="100%" >
+                    <include id="rootPagina"/>
+                </n:div>
+                
+            </n:div>
+        
+        </div>
+
+    </window>
+</zk>
+

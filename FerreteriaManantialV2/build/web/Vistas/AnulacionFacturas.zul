@@ -1,0 +1,74 @@
+
+<zk xmlns:n="native">
+    <window border="normal"  
+            id ="wind" title="ANULACION DE FACTURAS FEL"
+            position="center,center" 
+            action="show: slideDown;hide: slideUp"
+    >
+        <div apply="ctrl_.Modal" xmlns:n="native" sclass="col-md-12 col-sm-12" >
+            <groupbox
+                style="margin: 0 auto; border-radius: 5px; box-shadow: 1px 1px 1px"
+                closable="false" width="100%;" mold="3d">
+                
+                <div sclass="row" >
+                    <div sclass="col-md-1">
+           
+                    </div>
+                    <div sclass="col-md-10">
+            
+                        <div sclass="row" >
+                            <div sclass="col-md-12 text-center">
+                                <label value="DESEA ANULAR LA ACTURA SIGUIENTE" style="font-size:20px; font-weight:bold;"  />
+                            </div>
+                        </div>
+                    
+                        <n:br/>
+                        <div sclass="row" >
+                            <div sclass="col-md-12">
+                                <label value="AUTORIZACION: " style="font-size:18px; font-weight:bold; color:red;"  />
+                        <n:br/>
+                                <label id ="lblAutorizacion" style="font-size:18px; font-weight:bold;"  />
+                            </div>
+                        </div>
+                        <div sclass="row" >
+                            <div sclass="col-md-12">
+                                <label value="CLIENTE: " style="font-size:18px; font-weight:bold; color:red;"  />
+                        <n:br/>
+                                <label id = "lblCliente"   style="font-size:18px; font-weight:bold;"  />
+                            </div>
+                        </div>
+                        <div sclass="row" >
+                            <div sclass="col-md-12">
+                                <label value="FECHA EMISION: " style="font-size:18px; font-weight:bold; color:red;"  />
+                        <n:br/>
+                                <label id="lblFechaEmision" style="font-size:18px; font-weight:bold;"  />
+                            </div>
+                        </div>
+                        <div sclass="row" >
+                            <div sclass="col-md-12">
+                                <label value="INGRESE EL MOTIVO DE ANULACION: " style="font-size:18px; font-weight:bold; color:red;"  />
+                                <textbox   id="txtMotivo"  width="100%" value="" readonly="false" style="font-size:16px;" maxlength="900"/>
+                            </div>
+                        </div>
+                        <n:br/>
+                        <div sclass="row" >
+                            <div sclass="col-md-3"/>
+                            <div sclass="col-md-3">
+                                <button label="Anular"  width="100%"    id="btnGuardar" sclass="btn btn-primary btn-md" />
+                            </div>
+                        
+                            <div sclass="col-md-3">
+                                <button label="Cancelar" width="100%"     id="btnCancelar" sclass="btn btn-primary btn-md" />
+                            </div>
+                        
+                            <div sclass="col-md-3"/>
+                        </div>
+                    </div>
+                    <div sclass="col-md-1">
+          
+                    </div>
+                </div>
+            </groupbox>         
+        </div>     
+    </window>
+</zk>

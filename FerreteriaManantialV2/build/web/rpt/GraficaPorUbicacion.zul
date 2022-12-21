@@ -1,0 +1,37 @@
+<zk xmlns:n="native">
+    <div>
+        <n:br/>
+        <n:br/>
+        <n:br/>
+        <n:br/>
+    </div>
+
+    <div sclass="col-md-12 col-sm-12" apply="ctrl_.GraficaPorUbicacionCtrl" xmlns:n="native" >
+    
+        <div class="col col-md-12 col-sm-12 text-center">
+            <div sclass="col-md-12 col-sm-12 text-center">
+                <label value="BICI-REPUESTOS CALULO, GRAFICA DE PRODUCTOS POR UBICACION" style="color: blue; font-weight: bold; font-size: 20px;"/>
+            </div>
+        
+            <div sclass="col-md-12 col-sm-12 text-center" >
+                <label value="Fecha Impresión" style="color: blue; font-weight: bold; font-size: 20px"/>
+                <datebox id="Fecha_Inicial" format="dd/MM/yyyy" style="color: black; font-weight: bold; font-size: 20px"/>
+            </div> 
+        
+            <div sclass="col-md-12 col-sm-12 text-center">            
+                <zhighcharts id="grafica1" />
+            </div>
+            <div>
+                <n:br/>
+                <n:br/>
+                <n:br/>
+                <n:br/>
+            </div>
+            <div sclass="col-md-6 col-sm-6" >
+                <zhighcharts id="grafica2" />
+            </div> 
+        </div>
+        
+    </div>
+    
+</zk>
